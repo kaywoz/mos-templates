@@ -1,0 +1,7 @@
+{
+  "name": "Filestash",
+  "category": [ "Storage" ],
+  "description": "It started as a storage agnostic Dropbox-like file manager that works with every storage protocol: FTP, SFTP, S3, SMB, WebDAV, IPFS, and about 20 more. ",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/filestash.png",
+  "website": "https://www.filestash.app/"
+}
