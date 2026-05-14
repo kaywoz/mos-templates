@@ -1,0 +1,59 @@
+{
+  "name": "timemachine",
+  "repo":"mbentley/timemachine:smb",
+  "registry": "https://hub.docker.com/r/mbentley/timemachine",
+  "network": "host",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": true, //using --tmpfs
+  "extra_parameters": "--restart=always",
+  "post_parameters": null,
+  "web_ui_url": null, //no web ui
+  "icon": "https://icons.veryicon.com/png/Application/OS%20X%20Yosemite%20Preview/timemachine.png",
+  "project": "https://github.com/mbentley/timemachine",
+  "support": "https://github.com/mbentley/timemachine/issues",
+  "description": "### 📅 Time Machine\r\n\r\Time machine container to be used with Docker \r\n\r\nVisit this url to browse the docs https://github.com/mbentley/timemachine#readme",
+  "paths": [
+    {
+      "name": "Backup Data",
+      "host": "/mnt/PLACEHOLDER/timemachine",
+      "container": "/opt/timemachine",
+      "mode": "rw",
+      "description": null,
+      "required": true
+    }
+  ],
+  "ports": [],
+  "variables": [
+    {
+      "name": "TM_USERNAME",
+      "default": "timemachine"
+    },
+	{
+      "name": "TM_GROUPNAME",
+      "default": "timemachine"
+    },
+	{
+      "name": "PASSWORD",
+      "default": "timemachine"
+    },
+	{
+      "name" : "TM_UID",
+	  "default" :"1000"
+    },
+	{
+      "name": "TM_GID",
+	  "default" : "1000"
+    },
+	{
+      "name": "SET_PERMISSIONS",
+	  "default" : false
+    },
+	{
+      "name": "VOLUME_SIZE_LIMIT",
+	  "default" : 0
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
