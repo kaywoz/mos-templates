@@ -1,5 +1,5 @@
 {
-  "name": "Copyparty",
+  "name": "copyparty",
   "repo": "ghcr.io/9001/copyparty-ac",
   "registry": "https://github.com/9001/copyparty/pkgs/container/copyparty-ac",
   "network": "bridge",

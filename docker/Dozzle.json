@@ -1,5 +1,5 @@
 {
-  "name": "Dozzle",
+  "name": "dozzle",
   "repo": "amir20/dozzle:latest",
   "network": "bridge",
   "custom_ip": null,
