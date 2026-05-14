@@ -1,4 +1,4 @@
-# 📦 Morna's MOS Templates
+# 📦 kaywoz's MOS Templates
 
 Templates for the **MOS Hub** – a collection of templates that are **directly discoverable inside the MOS Hub**.
 ---
