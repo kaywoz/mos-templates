@@ -1,0 +1,70 @@
+{
+  "name": "Filestash",
+  "repo": "ghcr.io/machines/filestash",
+  "registry": "https://hub.docker.com/r/machines/filestash",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": null,//not set on docker-compose
+  "post_parameters": "--user=1000:1000",
+  "web_ui_url": "http://[IP]:8334/filestash",
+  "icon": "https://downloads.filestash.app/brand/logo_white.svg",
+  "project": "https://github.com/mickael-kerjean/filestash/",
+  "support": "https://github.com/mickael-kerjean/filestash/issues",
+  "description": "### 📂 Filestash\r\n\r\Filestash is a self-hosted file manager and cloud storage browser, written in Rust.\r\n\r\nIt provides a simple interface for managing files and folders on your server or cloud storage.\r\n\r\nVisit this url to browse the docs https://github.com/mickael-kerjean/filestash#readme",
+  "paths": [
+    {
+      "name": "Config Files",
+      "host": "/mnt/PLACEHOLDER/appdata/filestash/data/state",
+      "container": "/app/data/state",
+      "mode": "rw",
+      "description": null,
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "App",
+      "host": "8334",
+      "container": "8334",
+      "protocol": "tcp",
+      "description": null,
+      "required": false,//might expose multiple ports
+      "mask": false
+    },
+    {
+      "name": "WOPIServer",
+      "host": "9980",
+      "container": "9980",
+      "protocol": "tcp",
+      "description": null,
+      "required": false,
+      "mask": false
+    }
+  ],
+  "variables": [
+	{
+	"name" : "APPLICATION_URL",
+	"default":""
+	},
+    {
+      "name": "CANARY",
+      "default": true
+    },
+    {
+      "name" : "OFFICE_URL",
+	"default":"WOPI_Server:9980"
+    },
+    {
+      "name" : "OFFICE_FILESTASH_URL",
+	"default":"App:8334"
+    },
+    {
+      "name" : "OFFICE_REWRITE_URL",
+	"default":"127.0.0.1:9980"
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
