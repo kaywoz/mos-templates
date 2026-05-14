@@ -9,7 +9,7 @@
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:25600]/",
   "readme_url": "https://github.com/gotson/komga/blob/master/README.md",
-  "icon": "https://github.com/gotson/komga/blob/master/.github/readme-images/app-icon.png?raw=true",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/komga.png",
   "category": [ "media" ],
   "project": "https://github.com/gotson/komga",
   "support": "https://github.com/gotson/komga/issues",
