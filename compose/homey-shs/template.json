@@ -1,0 +1,7 @@
+{
+  "name": "homey shs",
+  "category": [ "Home Automation" ],
+  "description": "Homey Self-Hosted Server is a software solution that allows you to run Homey on your own hardware, providing the same features as Homey Pro while enabling you to connect various smart home devices. ",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/homey.png",
+  "website": "https://homey.app/en-us/homey-self-hosted-server/"
+}
