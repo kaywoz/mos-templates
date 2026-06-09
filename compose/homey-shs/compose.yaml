@@ -6,4 +6,4 @@ services:
     network_mode: host
     privileged: true
     volumes:
-      - ~/.homey-shs:/homey/user
+      - ./homey-shs:/homey/user
