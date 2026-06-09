@@ -1,0 +1,121 @@
+{
+  "name": "ArchiveBox",
+  "repo": "ghcr.io/archivebox/archivebox:latest",
+  "registry": "https://github.com/ArchiveBox/ArchiveBox/pkgs/container/archivebox",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": null,
+  "post_parameters": null,
+  "web_ui_url": "http://[IP]:[PORT:8000]/",
+  "icon": "https://raw.githubusercontent.com/Mainfrezzer/UnRaid-Templates/main/icon/archivebox.png",
+  "project": "https://github.com/ArchiveBox/ArchiveBox",
+  "support": "https://forums.unraid.net/topic/182778-support-mainfrezzer-docker-repo/",
+  "description": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view websites offline.\r\rWithout active preservation effort, everything on the internet eventually disappears or degrades. Archive.org does a great job as a centralized service, but saved URLs have to be public, and they can't save every type of content.\r\rArchiveBox is an open source tool that lets organizations &amp; individuals archive both public &amp; private web content while retaining control over their data. It can be used to save copies of bookmarks, preserve evidence for legal cases, backup photos from FB/Insta/Flickr or media from YT/Soundcloud/etc., save research papers, and more...",
+  "paths": [
+    {
+      "name": "Data",
+      "host": "/mnt/PLACEHOLDER/ArchiveBox",
+      "container": "/data",
+      "mode": "rw",
+      "description": "Contains the DB and logfiles",
+      "required": true
+    },
+    {
+      "name": "Archive Data",
+      "host": "/mnt/PLACEHOLDER/ArchiveBox/share",
+      "container": "/data/archive",
+      "mode": "rw",
+      "description": "Contains all the data thats being archived.",
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI",
+      "host": "8000",
+      "container": "8000",
+      "protocol": "tcp",
+      "description": null,
+      "required": true,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "Public Index",
+      "key": "PUBLIC_INDEX",
+      "value": "True",
+      "description": "set to False to prevent anonymous users from viewing snapshot list",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Public Snapshots",
+      "key": "PUBLIC_SNAPSHOTS",
+      "value": "True",
+      "description": "set to False to prevent anonymous users from viewing snapshot content",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Public Add View",
+      "key": "PUBLIC_ADD_VIEW",
+      "value": "False",
+      "description": "set to True to allow anonymous users to submit new URLs to archive",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "UID",
+      "key": "PUID",
+      "value": "500",
+      "description": null,
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "GID",
+      "key": "PGID",
+      "value": "500",
+      "description": null,
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Timeout",
+      "key": "TIMEOUT",
+      "value": "60",
+      "description": "increase this number to 120+ seconds if you see many slow downloads timing out",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Curl User Agent",
+      "key": "CURL_USER_AGENT",
+      "value": null,
+      "description": "set a custom CURL_USER_AGENT to avoid being blocked as a bot",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Wget User Agent",
+      "key": "WGET_USER_AGENT",
+      "value": null,
+      "description": "set a custom WGET_USER_AGENT to avoid being blocked as a bot",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Chrome User Agent",
+      "key": "CHROME_USER_AGENT",
+      "value": null,
+      "description": "set a custom CHROME_USER_AGENT to avoid being blocked as a bot",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": [],
+  "labels": []
+}

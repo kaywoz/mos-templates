@@ -1,0 +1,68 @@
+{
+  "name": "AdGuard Home",
+  "repo": "adguard/adguardhome",
+  "category": [ "network" ],
+  "registry": "https://registry.hub.docker.com/r/adguard/adguardhome",
+  "network": "br0",
+  "custom_ip": null,
+  "default_shell": "bash",
+  "privileged": false,
+  "extra_parameters": null,
+  "post_parameters": null,
+  "cpu_set": null,
+  "web_ui_url": "http://[IP]:[PORT:3000]/",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/adguard-home.png",
+  "project": null,
+  "support": "",
+  "description": "AdGuard Home is a network-wide software for blocking ads &amp; tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.\r",
+  "paths": [
+    {
+      "name": "Working Directory",
+      "host": "/mnt/PLACEHOLDER/adguardhome/opt/work",
+      "container": "/opt/adguardhome/work",
+      "mode": "rw",
+      "description": "/opt/adguardhome/work",
+      "required": true
+    },
+    {
+      "name": "Working Directory",
+      "host": "/mnt/PLACEHOLDER/adguardhome/opt/conf",
+      "container": "/opt/adguardhome/conf",
+      "mode": "rw",
+      "description": "Configuration Directory",
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI",
+      "host": "3000",
+      "container": "3000",
+      "protocol": "tcp",
+      "description": "Port of the Web UI",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DNS Server TCP",
+      "host": "53",
+      "container": "53",
+      "protocol": "tcp",
+      "description": "TCP Port that is used for the DNS Server (Changing this is not recomended)",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DNS Server UDP",
+      "host": "53",
+      "container": "53",
+      "protocol": "udp",
+      "description": "UDP Port that is used for the DNS Server (Changing this is not recomended)",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "variables": [],
+  "devices": [],
+  "labels": []
+}

@@ -1,5 +1,5 @@
 {
-  "name": "copyparty",
+  "name": "Copyparty",
   "repo": "ghcr.io/9001/copyparty-ac",
   "registry": "https://github.com/9001/copyparty/pkgs/container/copyparty-ac",
   "network": "bridge",
@@ -9,7 +9,7 @@
   "extra_parameters": "--user=500:500",
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:3923]",
-  "icon": "https://raw.githubusercontent.com/Mainfrezzer/UnRaid-Templates/refs/heads/main/icon/copyparty.png",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/code.png",
   "project": "https://github.com/9001/copyparty",
   "support": "https://github.com/9001/copyparty/issues",
   "description": "### 💾🎉 copyparty\r\n\r\nturn almost any device into a file server with resumable uploads/downloads using *any* (https://github.com/9001/copyparty/blob/hovudstraum/README.md#browser-support) web browser\r\n\r\nA full list of the feature set can be found here https://github.com/9001/copyparty/blob/hovudstraum/README.md#features",
