@@ -1,0 +1,25 @@
+§services:
+  homey-shs:
+    image: ghcr.io/athombv/homey-shs:latest
+    container_name: shpc-homeyshs-0101
+    restart: unless-stopped
+    privileged: true
+    # Use 'network_mode' to force macvlan usage
+    network_mode: macvlan # <--- The single network mode directive
+    environment:
+      HOMEY_LOCAL_ADDRESS: "192.168.13.30" # Environment variable for the app (if needed)
+    volumes:
+      - shpc-homeyshs-0101:/homey/user
+
+# ==========================================
+# NETWORK DEFINITION (Root Level)
+# ==========================================
+networks:
+  macvlan_net: # <-- Define a single name for this MacVLAN network
+    driver: macvlan 
+    options:
+      parent: br0.13 # !!! CRITICAL: Use the physical or logical bridge parent interface here !!!
+    ipam:
+      config:
+        - subnet: 192.168.13.0/27
+          gateway: 192.168.13.1
