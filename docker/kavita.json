@@ -1,6 +1,6 @@
 {
   "name": "kavita",
-  "repo": "ajvmilazz0/kavita:latest",
+  "repo": "linuxserver/kavita:latest",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
@@ -8,11 +8,11 @@
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:5000]",
-  "readme_url": "https://github.com/Kareadita/Kavita/blob/develop/README.md",
+  "readme_url": "https://github.com/linuxserver/docker-kavita/blob/main/README.md",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/kavita.png",
   "category": [ "media" ],
-  "project": "https://github.com/Kareadita/Kavita",
-  "support": "https://github.com/Kareadita/Kavita/issues",
+  "project": "https://github.com/linuxserver/docker-kavita",
+  "support": "https://github.com/linuxserver/docker-kavita/issues",
   "description": "Kavita is a fast, feature rich, cross-platform reading server. Built with a focus for being a full solution for all your reading needs. Set up your own server and share your reading collection with your friends and family!",
   "donate": "https://opencollective.com/Kavita#sponsor",
   "paths": [
@@ -21,7 +21,7 @@
       "mode": "rw",
       "host": "/mnt/PLACEHOLDER/library",
       "container": "/library",
-      "description": "Docker socket for accessing container logs."
+      "description": "Library mapping."
     },
     {
       "name": "Config",
