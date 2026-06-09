@@ -9,7 +9,7 @@
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:8080]",
   "readme_url": "https://github.com/amir20/dozzle/blob/master/README.md",
-  "icon": "https://github.com/amir20/dozzle/raw/master/assets/logo.svg",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/dozzle.png",
   "category": [ "productivity" ],
   "project": "https://github.com/amir20/dozzle",
   "support": "https://github.com/amir20/dozzle/issues",
