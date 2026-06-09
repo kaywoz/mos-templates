@@ -1,4 +1,4 @@
-§services:
+services:
   homey-shs:
     image: ghcr.io/athombv/homey-shs:latest
     container_name: shpc-homeyshs-0101
