@@ -1,0 +1,7 @@
+{
+  "name": "PocketID",
+  "category": [ "Security" ],
+  "description": "A simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pocket-id.png",
+  "website": "https://pocket-id.org/"
+}
