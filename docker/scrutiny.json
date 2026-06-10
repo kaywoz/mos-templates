@@ -1,0 +1,59 @@
+{
+  "name": "Scrutiny",
+  "repo": "ghcr.io/analogj/scrutiny:latest-omnibus",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped --cap-add SYS_RAWIO --device=/dev/sda --device=/dev/sdb",
+  "post_parameters": null,
+  "web_ui_url": null,
+  "readme_url": "https://github.com/AnalogJ/scrutiny/blob/master/README.md",
+  "icon": "https://github.com/AnalogJ/scrutiny/raw/master/webapp/frontend/src/assets/images/logo/scrutiny-logo-dark.png",
+  "category": [ "utilities" ],
+  "project": "https://github.com/AnalogJ/scrutiny",
+  "support": "https://github.com/AnalogJ/scrutiny/issues",
+  "description": "WebUI for smartd S.M.A.R.T monitoring",
+  "donate": null,
+  "paths": [
+    {
+      "name": "Config",
+      "mode": "rw",
+      "host": "/mnt/PLACEHOLDER/scrutiny",
+      "container": "/opt/scrutiny/config",
+      "description": null
+    },
+    {
+      "name": "InfluxDB",
+      "mode": "rw",
+      "host": "/mnt/PLACEHOLDER/scrutiny/influxdb2",
+      "container": "/opt/scrutiny/influxdb",
+      "description": null
+    },
+    {
+      "name": "Docker socket",
+      "mode": "ro",
+      "host": "/run/udev",
+      "container": "/run/udev",
+      "description": null
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI Port",
+      "protocol": "tcp",
+      "host": "8080",
+      "container": "8080",
+      "description": "Web interface port for viewing container logs."
+    },
+    {
+      "name": "InfluxDB Port",
+      "protocol": "tcp",
+      "host": "8086",
+      "container": "8086",
+      "description": "InfluxDB"
+    }
+  ],
+  "variables": [],
+  "devices": []
+}
