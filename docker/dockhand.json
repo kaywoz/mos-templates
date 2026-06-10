@@ -1,0 +1,57 @@
+{
+  "name": "Dockhand",
+  "repo": "fnsys/dockhand:latest",
+  "registry": "https://hub.docker.com/r/fnsys/dockhand/",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart unless-stopped",
+  "post_parameters": null,
+  "web_ui_url": "http://[IP]:[PORT:3000]",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/dockhand.png",
+  "project": "https://dockhand.pro",
+  "support": "https://github.com/Finsys/dockhand/issues",
+  "description": "Dockhand is a modern Docker management for everyone.\r\n    \r\n    A powerful, intuitive Docker platform. Free for homelabs, ready for enterprise.\r\n    SQLite by default, runs on a Raspberry Pi, zero telemetry, free forever. Self-host everything without the complexity.\r\n    \r\n    Features\r\n    - Container Management\r\n    - Compose Stacks\r\n    - Git Integration\r\n    - Multi-Environment\r\n    - Terminal and Logs\r\n    - File Browser\r\n    - Authentication: SSO via OIDC, local users, and optional RBAC (Enterprise)\r\n    \r\n    Tech Stack   \r\n    - Base: own OS layer built from scratch using Wolfi packages via apko. Every package is explicitly declared in the Dockerfile.\r\n    - Frontend: SvelteKit 2, Svelte 5, shadcn-svelte, TailwindCSS\r\n    - Backend: Bun runtime with SvelteKit API routes\r\n    - Database: SQLite or PostgreSQL via Drizzle ORM\r\n    - Docker: direct docker API calls.\r\n    \r\n    Links\r\n    - Website: https://dockhand.pro\r\n    - Documentation: https://dockhand.pro/manual\r\n    - Project: https://github.com/Finsys/dockhand\r\n  ",
+  "paths": [
+    {
+      "name": "Docker Socket",
+      "host": "/var/run/docker.sock",
+      "container": "/var/run/docker.sock",
+      "mode": "ro",
+      "description": null,
+      "required": false
+    },
+    {
+      "name": "Data Volume",
+      "host": "/mnt/PLACEHOLDER/dockhand",
+      "container": "/app/data",
+      "mode": "rw",
+      "description": null,
+      "required": false
+    }
+  ],
+  "ports": [
+    {
+      "name": "Port",
+      "host": "3000",
+      "container": "3000",
+      "protocol": "tcp",
+      "description": null,
+      "required": false,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "DATABASE_URL",
+      "key": "DATABASE_URL",
+      "value": null,
+      "description": "PostgreSQL connection URL. When unset, SQLite is used. Format: postgres://user:password@host:5432/dbname",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
