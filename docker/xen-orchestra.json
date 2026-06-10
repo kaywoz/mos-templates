@@ -1,5 +1,5 @@
 {
-  "name": "Xen Orchestra",
+  "name": "XenOrchestra",
   "repo": "ronivay/xen-orchestra:latest",
   "network": "bridge",
   "custom_ip": null,
