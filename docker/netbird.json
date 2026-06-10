@@ -1,6 +1,6 @@
 {
   "name": "Netbird",
-  "repo": "ghcr.io/jonlabelle/network-tools:latest",
+  "repo": "netbirdio/netbird:latest",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
@@ -22,15 +22,6 @@
       "host": "/netbird-client",
       "container": "/var/lib/netbird",
       "description": "Netbird dir."
-    }
-  ],
-  "ports": [
-    {
-      "name": null,
-      "mode": null,
-      "host": null,
-      "container": null,
-      "description": null
     }
   ],
   "variables": [
