@@ -1,0 +1,40 @@
+{
+  "name": "Archive-warrior",
+  "repo": "nickfedor/watchtower:latest",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "web_ui_url": null,
+  "readme_url": "https://github.com/ArchiveTeam/warrior-dockerfile/blob/master/README.md",
+  "icon": "https://tracker.archiveteam.org/how-to-help/warrior-logo.png",
+  "category": [ "utilities" ],
+  "project": "https://github.com/ArchiveTeam/warrior-dockerfile",
+  "support": "https://github.com/ArchiveTeam/warrior-dockerfile/issues",
+  "description": "The ArchiveTeam Warrior is a virtual archiving appliance. You can run it to help with the ArchiveTeam archiving efforts. It will download sites and upload them to our archive — and it’s really easy to do!",
+  "donate": "https://archive.org/donate/",
+  "paths": [
+    {
+      "name": "Docker socket",
+      "mode": null,
+      "host": null,
+      "container": null,
+      "description": null
+    }
+  ],
+  "ports": [
+    {
+      "name": "Port",
+      "host": "8001",
+      "container": "8001",
+      "protocol": "tcp",
+      "description": null,
+      "required": true,
+      "mask": false
+    }
+  ],
+  "variables": [],
+  "devices": []
+}

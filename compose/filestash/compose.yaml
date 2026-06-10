@@ -13,7 +13,7 @@ services:
     ports:
     - "8334:8334"
     volumes:
-    - filestash:/app/data/state/
+    - ./filestash:/app/data/state/
 
   wopi_server:
     container_name: filestash_wopi
