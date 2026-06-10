@@ -37,7 +37,9 @@
       "protocol": "tcp",
       "host": "80",
       "container": "80",
-      "description": "Web interface port for Xen Orchestra."
+      "description": "Web interface port for Xen Orchestra.",
+      "required": false,
+      "mask": false
     }
   ],
   "variables": [],
@@ -46,19 +48,22 @@
       "name": "FUSE",
       "host": "/dev/fuse:",
       "container": "/dev/fuse",
-      "description": null
+      "description": null,
+      "required": false
     },
     {
       "name": "loop-control",
       "host": "/dev/loop-control",
       "container": "/dev/loop-control",
-      "description": null
+      "description": null,
+      "required": false
     },
     {
       "name": "loop0",
       "host": "/dev/loop0",
       "container": "/dev/loop0",
-      "description": null
+      "description": null,
+      "required": false
     }
   ]
 }
