@@ -19,7 +19,7 @@
     {
       "name": "Docker" ,
       "mode": "rw",
-      "host": "/netbird-client",
+      "host": "/mnt/PLACEHOLDER/netbird-client",
       "container": "/var/lib/netbird",
       "description": "Netbird dir."
     }
