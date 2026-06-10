@@ -9,7 +9,7 @@
   "post_parameters": null,
   "web_ui_url": null,
   "readme_url": "https://github.com/ronivay/xen-orchestra-docker/blob/master/README.md",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/xen-orchestra.png",
   "category": [ "utilities" ],
   "project": "https://github.com/ronivay/xen-orchestra-docker",
   "support": "https://github.com/ronivay/xen-orchestra-docker/issues",
