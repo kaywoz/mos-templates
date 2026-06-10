@@ -1,6 +1,6 @@
 {
   "name": "Archive-warrior",
-  "repo": "nickfedor/watchtower:latest",
+  "repo": "atdr.meo.ws/archiveteam/warrior-dockerfile",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
@@ -17,7 +17,7 @@
   "donate": "https://archive.org/donate/",
   "paths": [
     {
-      "name": "Docker socket",
+      "name": null,
       "mode": null,
       "host": null,
       "container": null,
