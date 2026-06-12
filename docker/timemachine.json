@@ -17,7 +17,7 @@
     {
       "name": "Backup Data",
       "host": "/mnt/PLACEHOLDER/timemachine",
-      "container": "/opt/timemachine",
+      "container": "/opt/PLACEHOLDER",
       "mode": "rw",
       "description": null,
       "required": true
@@ -27,30 +27,37 @@
   "variables": [
     {
       "name": "TM_USERNAME",
+      "key": "TM_USERNAME",
       "default": "timemachine"
     },
 	{
       "name": "TM_GROUPNAME",
+      "key": "TM_GROUPNAME",
       "default": "timemachine"
     },
 	{
       "name": "PASSWORD",
+      "key": "PASSWORD",
       "default": "timemachine"
     },
 	{
       "name" : "TM_UID",
+      "key": "TM_UID",
 	  "default" :"1000"
     },
 	{
       "name": "TM_GID",
+      "key": "TM_GID",
 	  "default" : "1000"
     },
 	{
       "name": "SET_PERMISSIONS",
+      "key": "SET_PERMISSIONS",
 	  "default" : false
     },
 	{
       "name": "VOLUME_SIZE_LIMIT",
+      "key": "VOLUME_SIZE_LIMIT",
 	  "default" : 0
     }
   ],
