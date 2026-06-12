@@ -1,5 +1,5 @@
 {
-  "name": "Archive-warrior",
+  "name": "Archive Warrior",
   "repo": "atdr.meo.ws/archiveteam/warrior-dockerfile",
   "network": "bridge",
   "custom_ip": null,

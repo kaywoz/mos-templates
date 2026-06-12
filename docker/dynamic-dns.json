@@ -1,0 +1,67 @@
+{
+  "name": "Dynamic DNS",
+  "repo": "cush/docker-dynamic-dns:latest",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "web_ui_url": null,
+  "readme_url": "https://github.com/theonemule/docker-dynamic-dns/blob/master/readme.md",
+  "icon": null,
+  "category": [ "utilities" ],
+  "project": "https://github.com/theonemule/docker-dynamic-dns/tree/master",
+  "support": "https://github.com/theonemule/docker-dynamic-dns/tree/master/issues",
+  "description": "This is a DDNS client for Docker, a fork of blaize/docker-dynamic-dns.",
+  "donate": null,
+  "paths": [
+    {
+      "name": null,
+      "mode": null,
+      "host": null,
+      "container": null,
+      "description": null
+    }
+  ],
+  "ports": [
+    {
+      "name": null,
+      "mode": null,
+      "host": null,
+      "container": null,
+      "description": null
+    }
+  ],
+  "variables": [
+    {
+      "name": "USER1",
+      "default": "username"
+    },
+     {
+      "name": "PASSWORD1",
+      "default": "yourpassword"
+    },
+     {
+      "name": "HOSTNAME1",
+      "default": "test.example.com"
+    },
+     {
+      "name": "DETECTIP",
+      "default": "1"
+    },
+     {
+      "name": "INTERVAL",
+      "default": "1"
+    },
+     {
+      "name": "SERVICE",
+      "default": "google"
+    },
+     {
+      "name": "DOMAINS",
+      "default": "2"
+    }
+  ],
+  "devices": []
+}
