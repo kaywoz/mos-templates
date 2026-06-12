@@ -16,7 +16,7 @@
   "paths": [
     {
       "name": "Data",
-      "host": "/mnt/PLACEHOLDER/ArchiveBox",
+      "host": "/mnt/PLACEHOLDER/ArchiveBox/data",
       "container": "/data",
       "mode": "rw",
       "description": "Contains the DB and logfiles",

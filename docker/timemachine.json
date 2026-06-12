@@ -1,5 +1,5 @@
 {
-  "name": "timemachine",
+  "name": "Timemachine",
   "repo":"mbentley/timemachine:smb",
   "registry": "https://hub.docker.com/r/mbentley/timemachine",
   "network": "host",

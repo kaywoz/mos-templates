@@ -1,5 +1,5 @@
 {
-  "name": "XenOrchestra",
+  "name": "Xen Orchestra",
   "repo": "ronivay/xen-orchestra:latest",
   "network": "bridge",
   "custom_ip": null,
@@ -26,7 +26,7 @@
     {
       "name": "Redis",
       "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/redis",
+      "host": "/mnt/PLACEHOLDER/xo-server/redis",
       "container": "/var/lib/redis",
       "description": null
     }
@@ -46,7 +46,7 @@
   "devices": [
     {
       "name": "FUSE",
-      "host": "/dev/fuse:",
+      "host": "/dev/fuse",
       "container": "/dev/fuse",
       "description": null,
       "required": false
