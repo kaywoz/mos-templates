@@ -1,0 +1,161 @@
+{
+  "name": "Healthchecks",
+  "repo": "lscr.io/linuxserver/healthchecks:latest",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped ",
+  "post_parameters": null,
+  "web_ui_url": null,
+  "readme_url": "https://github.com/healthchecks/healthchecks/blob/master/README.md",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/healthchecks.png",
+  "category": [ "utilities" ],
+  "project": "https://github.com/healthchecks/healthchecks",
+  "support": "https://github.com/healthchecks/healthchecks/issues",
+  "description": "Healthchecks is a cron job monitoring service. It listens for HTTP requests and email messages from your cron jobs and scheduled tasks. When a ping does not arrive on time, Healthchecks sends out alerts.",
+  "donate": null,
+  "paths": [
+    {
+      "name": "Data",
+      "mode": "rw",
+      "host": "/mnt/PLACEHOLDER/healthchecks-data",
+      "container": "/data",
+      "description": null
+    },
+    {
+      "name": "Config",
+      "mode": "rw",
+      "host": "/mnt/PLACEHOLDER/healthchecks-data/config",
+      "container": "/config",
+      "description": null
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI Port",
+      "protocol": "tcp",
+      "host": "8000",
+      "container": "8000",
+      "description": "Web interface",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "SMTP Listener",
+      "protocol": "tcp",
+      "host": "2525",
+      "container": "2525",
+      "description": "SMTP Listener",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "PUID",
+      "key": "PUID",
+      "value": "1000",
+      "description": "User ID",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "PGID",
+      "key": "PGID",
+      "value": "1000",
+      "description": "Group ID",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Timezone",
+      "key": "TZ",
+      "value": "Europe/Stockholm",
+      "description": "Timezone",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "SITE_ROOT",
+      "key": "SITE_ROOT",
+      "value": null,
+      "description": "The base public URL of your Healthchecks instance",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "SITE_NAME",
+      "key": "SITE_NAME",
+      "value": null,
+      "description": "Name of Site",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "SUPERUSER_EMAIL",
+      "key": "SUPERUSER_EMAIL",
+      "value": null,
+      "description": "Superuser contact email",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "SUPERUSER_PASSWORD",
+      "key": "SUPERUSER_PASSWORD",
+      "value": null,
+      "description": "Superuser password",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DEBUG",
+      "key": "DEBUG",
+      "value": null,
+      "description": "Debug option",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "PING_EMAIL_DOMAIN",
+      "key": "PING_EMAIL_DOMAIN",
+      "value": null,
+      "description": "Email used for pings",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "INTEGRATIONS_ALLOW_PRIVATE_IPS",
+      "key": "INTEGRATIONS_ALLOW_PRIVATE_IPS",
+      "value": null,
+      "description": "If integrations allow private IP's",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "SECRET_KEY",
+      "key": "SECRET_KEY",
+      "value": null,
+      "description": "secures HTTP sessions",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "SITE_LOGO_URL",
+      "key": "SITE_LOGO_URL",
+      "value": null,
+      "description": "Url for Site logo",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "REGISTRATION_OPEN",
+      "key": "REGISTRATION_OPEN",
+      "value": null,
+      "description": "If user registration is open",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": []
+}
