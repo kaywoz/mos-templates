@@ -1,6 +1,6 @@
 {
   "name": "Ntfy",
-  "repo": "binwiederhier/ntfy :latest",
+  "repo": "binwiederhier/ntfy:latest",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
@@ -34,7 +34,7 @@
   "ports": [
      {
       "name": "Web Port",
-      "protocol": "udp",
+      "protocol": "tcp",
       "host": "80",
       "container": "80",
       "description": "Web Port"
