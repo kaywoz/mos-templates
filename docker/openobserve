@@ -58,6 +58,5 @@
       "required": true,
       "mask": true
     }
-  ],
-  "devices": []
+  ]
 }
