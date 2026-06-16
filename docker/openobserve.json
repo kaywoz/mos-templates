@@ -1,6 +1,6 @@
 {
   "name": "OpenObserve",
-  "repo": "zinclabs/openobserve-enterprise:latest",
+  "repo": "o2cr.ai/openobserve/openobserve-enterprise:latest",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
