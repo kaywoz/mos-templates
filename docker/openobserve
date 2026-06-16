@@ -1,19 +1,38 @@
 {
-  "name": "OpenObserve",
-  "repo": "o2cr.ai/openobserve/openobserve-enterprise:latest",
+  "name": "openobserve",
+  "repo": "netbirdio/netbird:latest",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
   "privileged": false,
-  "extra_parameters": "--restart=unless-stopped ",
+  "extra_parameters": "--restart=unless-stopped --cap-add=NET_ADMIN --cap-add=SYS_ADMIN --cap-add=SYS_RESOURCE",
   "post_parameters": null,
   "web_ui_url": null,
-  "readme_url": "https://github.com/openobserve/openobserve/blob/main/README.md",
-  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/openobserve.png",
+  "readme_url": "https://github.com/netbirdio/netbird/blob/main/README.md",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/netbird.png",
   "category": [ "utilities" ],
-  "project": "https://github.com/openobserve/openobserve",
-  "support": "https://github.com/openobserve/openobserve/issues",
-  "description": "Open source Datadog alternative for logs, metrics, traces, and frontend monitoring. Modern observability platform: 10x easier, 140x lower storage cost, high performance, petabyte scale.",
+  "project": "https://github.com/netbirdio/netbird/",
+  "support": "https://github.com/netbirdio/netbird/issues",
+  "description": "NetBird combines a configuration-free peer-to-peer private network and a centralized access control system in a single platform, making it easy to create secure private networks for your organization or home.",
   "donate": null,
-  "paths": []
+  "paths": [
+    {
+      "name": "Docker" ,
+      "mode": "rw",
+      "host": "/mnt/PLACEHOLDER/netbird-client",
+      "container": "/var/lib/netbird",
+      "description": "Netbird dir."
+    }
+  ],
+  "variables": [
+    {
+      "name": "NB_SETUP_KEY",
+      "key": "NB_SETUP_KEY",
+      "value": null,
+      "description": "Netbird setup key from https://app.netbird.io/setup-keys",
+      "required": true,
+      "mask": true
+    }
+  ],
+  "devices": []
 }
