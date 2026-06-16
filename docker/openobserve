@@ -15,48 +15,5 @@
   "support": "https://github.com/openobserve/openobserve/issues",
   "description": "Open source Datadog alternative for logs, metrics, traces, and frontend monitoring. Modern observability platform: 10x easier, 140x lower storage cost, high performance, petabyte scale.",
   "donate": null,
-  "paths": [
-    {
-      "name": "Data directory" ,
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/openobserve/data",
-      "container": "/data",
-      "description": "Data directory"
-    }
-  ],
-  "ports": [
-    {
-      "name": "Web Port",
-      "protocol": "tcp",
-      "host": "5080",
-      "container": "5080",
-      "description": "Web interface port."
-    }
-  ],
-  "variables": [
-    {
-      "name": "ZO_DATA_DIR",
-      "key": "ZO_DATA_DIR",
-      "value": "/data",
-      "description": "Data directory",
-      "required": true,
-      "mask": true
-    },
-    {
-      "name": "ZO_ROOT_USER_EMAIL",
-      "key": "ZO_ROOT_USER_EMAIL",
-      "value": "root@example.com",
-      "description": "Email User",
-      "required": true,
-      "mask": true
-    },
-    {
-      "name": "ZO_ROOT_USER_PASSWORD",
-      "key": "ZO_ROOT_USER_PASSWORD",
-      "value": "Complexpass#123",
-      "description": "Root user password",
-      "required": true,
-      "mask": true
-    }
-  ]
+  "paths": []
 }
