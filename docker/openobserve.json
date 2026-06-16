@@ -1,6 +1,6 @@
 {
   "name": "OpenObserve",
-  "repo": "o2cr.ai/openobserve/openobserve-enterprise:latest",
+  "repo": "openobserve/openobserve:latest",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
@@ -48,7 +48,7 @@
       "value": "root@example.com",
       "description": "Email User",
       "required": true,
-      "mask": true
+      "mask": false
     },
     {
       "name": "ZO_ROOT_USER_PASSWORD",
