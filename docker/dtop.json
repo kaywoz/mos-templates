@@ -1,6 +1,6 @@
 {
   "name": "dtop",
-  "repo": "ghcr.io/jonlabelle/network-tools:latest",
+  "repo": "ghcr.io/amir20/dtop:latest",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
