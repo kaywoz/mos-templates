@@ -27,7 +27,7 @@
       "name": "Config",
       "mode": "rw",
       "host": "/mnt/PLACEHOLDER/kavita/data/directory",
-      "container": "/kavita/config",
+      "container": "/config",
       "description": "Config directory"
     }
   ],
