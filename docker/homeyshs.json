@@ -1,0 +1,33 @@
+{
+  "name": "Homey SHS",
+  "repo": "ghcr.io/athombv/homey-shs:latest",
+  "registry": "https://github.com/athombv/homey-shs/pkgs/container/homey-shs",
+  "network": "host",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": true,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "cpu_set": null,
+  "web_ui_url": "http://[IP]:[PORT:80]",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/homey.png",
+  "category": [ "Home Automation" ],
+  "project": "https://homey.app/en-us/homey-self-hosted-server/",
+  "support": null,
+  "donate": null,
+  "description": "Homey Self-Hosted Server is a software solution that allows you to run Homey on your own hardware, providing the same features as Homey Pro while enabling you to connect various smart home devices.",
+  "paths": [
+    {
+      "name": "Data",
+      "host": "/mnt/cache/appdata/homey-shs",
+      "container": "/homey/user",
+      "mode": "rw",
+      "description": "Homey user data and configuration.",
+      "required": true
+    }
+  ],
+  "ports": [],
+  "variables": [],
+  "devices": [],
+  "labels": []
+}

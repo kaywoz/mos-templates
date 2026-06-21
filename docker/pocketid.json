@@ -1,0 +1,92 @@
+{
+  "name": "PocketID",
+  "repo": "ghcr.io/pocket-id/pocket-id:v2",
+  "registry": "https://github.com/pocket-id/pocket-id/pkgs/container/pocket-id",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "cpu_set": null,
+  "web_ui_url": "http://[IP]:[PORT:1411]",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pocket-id.png",
+  "category": [ "Security" ],
+  "project": "https://pocket-id.org/",
+  "support": "https://github.com/pocket-id/pocket-id/issues",
+  "donate": null,
+  "description": "A simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.",
+  "paths": [
+    {
+      "name": "Data",
+      "host": "/mnt/cache/appdata/pocketid",
+      "container": "/app/data",
+      "mode": "rw",
+      "description": "PocketID data and configuration.",
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI",
+      "host": "1411",
+      "container": "1411",
+      "protocol": "tcp",
+      "description": "Web interface port.",
+      "required": true,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "APP_URL",
+      "key": "APP_URL",
+      "value": "https://your-pocket-id-domain.com",
+      "description": "Public URL where PocketID is reachable. Must be set for your deployment.",
+      "required": true,
+      "mask": false
+    },
+    {
+      "name": "ENCRYPTION_KEY",
+      "key": "ENCRYPTION_KEY",
+      "value": "",
+      "description": "Base64 encryption key. Generate with: openssl rand -base64 32",
+      "required": true,
+      "mask": true
+    },
+    {
+      "name": "TRUST_PROXY",
+      "key": "TRUST_PROXY",
+      "value": "false",
+      "description": "Set to true if running behind a reverse proxy.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "MAXMIND_LICENSE_KEY",
+      "key": "MAXMIND_LICENSE_KEY",
+      "value": "",
+      "description": "Optional MaxMind license key for GeoIP features.",
+      "required": false,
+      "mask": true
+    },
+    {
+      "name": "PUID",
+      "key": "PUID",
+      "value": "1000",
+      "description": "User ID for file permissions.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "PGID",
+      "key": "PGID",
+      "value": "1000",
+      "description": "Group ID for file permissions.",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
