@@ -1,5 +1,5 @@
 {
-  "name": "Network-tools",
+  "name": "Network-tools-",
   "repo": "ghcr.io/jonlabelle/network-tools:latest",
   "network": "bridge",
   "custom_ip": null,
