@@ -8,22 +8,16 @@
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": null,
-  "readme_url": "https://github.com/ArchiveTeam/warrior-dockerfile/blob/master/README.md",
   "icon": "https://tracker.archiveteam.org/how-to-help/warrior-logo.png",
-  "category": [ "utilities" ],
+  "category": [
+    "Utilities"
+  ],
   "project": "https://github.com/ArchiveTeam/warrior-dockerfile",
   "support": "https://github.com/ArchiveTeam/warrior-dockerfile/issues",
-  "description": "The ArchiveTeam Warrior is a virtual archiving appliance. You can run it to help with the ArchiveTeam archiving efforts. It will download sites and upload them to our archive — and it’s really easy to do!",
   "donate": "https://archive.org/donate/",
-  "paths": [
-    {
-      "name": null,
-      "mode": null,
-      "host": null,
-      "container": null,
-      "description": null
-    }
-  ],
+  "description": "The ArchiveTeam Warrior is a virtual archiving appliance. You can run it to help with the ArchiveTeam archiving efforts. It will download sites and upload them to our archive — and it’s really easy to do!",
+  "readme_url": "https://github.com/ArchiveTeam/warrior-dockerfile/blob/master/README.md",
+  "paths": [],
   "ports": [
     {
       "name": "Port",
@@ -36,5 +30,6 @@
     }
   ],
   "variables": [],
-  "devices": []
+  "devices": [],
+  "labels": []
 }

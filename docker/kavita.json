@@ -8,38 +8,45 @@
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:5000]",
-  "readme_url": "https://github.com/linuxserver/docker-kavita/blob/main/README.md",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/kavita.png",
-  "category": [ "media" ],
+  "category": [
+    "Media"
+  ],
   "project": "https://github.com/linuxserver/docker-kavita",
   "support": "https://github.com/linuxserver/docker-kavita/issues",
-  "description": "Kavita is a fast, feature rich, cross-platform reading server. Built with a focus for being a full solution for all your reading needs. Set up your own server and share your reading collection with your friends and family!",
   "donate": "https://opencollective.com/Kavita#sponsor",
+  "description": "Kavita is a fast, feature rich, cross-platform reading server. Built with a focus for being a full solution for all your reading needs. Set up your own server and share your reading collection with your friends and family!",
+  "readme_url": "https://github.com/linuxserver/docker-kavita/blob/main/README.md",
   "paths": [
     {
-      "name": "Library",
+      "name": "Config",
+      "host": "/mnt/cache/appdata/kavita",
+      "container": "/config",
       "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/library",
-      "container": "/library",
-      "description": "Library mapping."
+      "description": "Kavita configuration directory.",
+      "required": true
     },
     {
-      "name": "Config",
+      "name": "Library",
+      "host": "/mnt/user/media/books",
+      "container": "/library",
       "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/kavita/data/directory",
-      "container": "/config",
-      "description": "Config directory"
+      "description": "Path to your book/comic library.",
+      "required": true
     }
   ],
   "ports": [
     {
       "name": "WebUI Port",
-      "protocol": "tcp",
       "host": "5000",
       "container": "5000",
-      "description": "Web interface port for viewing media."
+      "protocol": "tcp",
+      "description": "Web interface port for viewing media.",
+      "required": false,
+      "mask": false
     }
   ],
   "variables": [],
-  "devices": []
+  "devices": [],
+  "labels": []
 }

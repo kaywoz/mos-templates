@@ -1,7 +1,6 @@
 {
   "name": "AdGuard Home",
   "repo": "adguard/adguardhome",
-  "category": [ "network" ],
   "registry": "https://registry.hub.docker.com/r/adguard/adguardhome",
   "network": "br0",
   "custom_ip": null,
@@ -12,13 +11,16 @@
   "cpu_set": null,
   "web_ui_url": "http://[IP]:[PORT:3000]/",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/adguard-home.png",
+  "category": [
+    "Network"
+  ],
   "project": null,
-  "support": "",
-  "description": "AdGuard Home is a network-wide software for blocking ads &amp; tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.\r",
+  "support": null,
+  "description": "AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
   "paths": [
     {
       "name": "Working Directory",
-      "host": "/mnt/PLACEHOLDER/adguardhome/opt/work",
+      "host": "/mnt/cache/appdata/adguardhome/opt/work",
       "container": "/opt/adguardhome/work",
       "mode": "rw",
       "description": "/opt/adguardhome/work",
@@ -26,7 +28,7 @@
     },
     {
       "name": "Working Directory",
-      "host": "/mnt/PLACEHOLDER/adguardhome/opt/conf",
+      "host": "/mnt/cache/appdata/adguardhome/opt/conf",
       "container": "/opt/adguardhome/conf",
       "mode": "rw",
       "description": "Configuration Directory",

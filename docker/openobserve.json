@@ -5,32 +5,37 @@
   "custom_ip": null,
   "default_shell": "sh",
   "privileged": false,
-  "extra_parameters": "--restart=unless-stopped ",
+  "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": null,
-  "readme_url": "https://github.com/openobserve/openobserve/blob/main/README.md",
   "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/openobserve.png",
-  "category": [ "utilities" ],
+  "category": [
+    "Utilities"
+  ],
   "project": "https://github.com/openobserve/openobserve",
   "support": "https://github.com/openobserve/openobserve/issues",
-  "description": "Open source Datadog alternative for logs, metrics, traces, and frontend monitoring. Modern observability platform: 10x easier, 140x lower storage cost, high performance, petabyte scale.",
   "donate": null,
+  "description": "Open source Datadog alternative for logs, metrics, traces, and frontend monitoring. Modern observability platform: 10x easier, 140x lower storage cost, high performance, petabyte scale.",
+  "readme_url": "https://github.com/openobserve/openobserve/blob/main/README.md",
   "paths": [
     {
-      "name": "Data directory" ,
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/openobserve/data",
+      "name": "Data directory",
+      "host": "/mnt/cache/appdata/openobserve/data",
       "container": "/data",
-      "description": "Data directory"
+      "mode": "rw",
+      "description": "Data directory",
+      "required": true
     }
   ],
   "ports": [
     {
       "name": "Web Port",
-      "protocol": "tcp",
       "host": "5080",
       "container": "5080",
-      "description": "Web interface port."
+      "protocol": "tcp",
+      "description": "Web interface port.",
+      "required": false,
+      "mask": false
     }
   ],
   "variables": [
@@ -58,5 +63,7 @@
       "required": true,
       "mask": true
     }
-  ]
+  ],
+  "devices": [],
+  "labels": []
 }

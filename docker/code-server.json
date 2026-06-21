@@ -6,31 +6,36 @@
   "default_shell": "bash",
   "privileged": false,
   "extra_parameters": "--restart=unless-stopped",
-  "post_parameters": "",
+  "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:8443]",
-  "readme_url": "https://github.com/coder/code-server/blob/main/docs/README.md",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/code.png",
-  "category": [ "Productivity" ],
+  "category": [
+    "Productivity"
+  ],
   "project": "https://github.com/microsoft/vscode",
   "support": "https://github.com/microsoft/vscode/issues",
-  "description": "Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.",
   "donate": "https://code.visualstudio.com/",
+  "description": "Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.",
+  "readme_url": "https://github.com/coder/code-server/blob/main/docs/README.md",
   "paths": [
     {
       "name": "Appdata",
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/code-server/config",
+      "host": "/mnt/cache/appdata/code-server/config",
       "container": "/config",
-      "description": "Configuration files and user settings for code-server."
+      "mode": "rw",
+      "description": "Configuration files and user settings for code-server.",
+      "required": true
     }
   ],
   "ports": [
     {
       "name": "WebUI",
-      "protocol": "tcp",
       "host": "8443",
       "container": "8443",
-      "description": "Web interface port for accessing VS Code in the browser."
+      "protocol": "tcp",
+      "description": "Web interface port for accessing VS Code in the browser.",
+      "required": false,
+      "mask": false
     }
   ],
   "variables": [
@@ -38,73 +43,83 @@
       "name": "PASSWORD",
       "key": "PASSWORD",
       "value": "",
-      "mask": true,
-      "description": "Password for web interface login."
+      "description": "Password for web interface login.",
+      "required": false,
+      "mask": true
     },
     {
       "name": "HASHED_PASSWORD",
       "key": "HASHED_PASSWORD",
       "value": "",
-      "mask": true,
-      "description": "Pre-hashed password for web interface (alternative to PASSWORD)."
+      "description": "Pre-hashed password for web interface (alternative to PASSWORD).",
+      "required": false,
+      "mask": true
     },
     {
       "name": "SUDO_PASSWORD",
       "key": "SUDO_PASSWORD",
       "value": "",
-      "mask": true,
-      "description": "Password for sudo commands within the container."
+      "description": "Password for sudo commands within the container.",
+      "required": false,
+      "mask": true
     },
     {
       "name": "SUDO_PASSWORD_HASH",
       "key": "SUDO_PASSWORD_HASH",
       "value": "",
-      "mask": true,
-      "description": "Pre-hashed sudo password (alternative to SUDO_PASSWORD)."
+      "description": "Pre-hashed sudo password (alternative to SUDO_PASSWORD).",
+      "required": false,
+      "mask": true
     },
     {
       "name": "PROXY_DOMAIN",
       "key": "PROXY_DOMAIN",
-      "value": "code-server.my.domain",
-      "mask": false,
-      "description": "Domain name for reverse proxy configuration."
+      "value": "your-domain.example.com",
+      "description": "Domain name for reverse proxy configuration.",
+      "required": false,
+      "mask": false
     },
     {
       "name": "DEFAULT_WORKSPACE",
       "key": "DEFAULT_WORKSPACE",
       "value": "/config/workspace",
-      "mask": false,
-      "description": "Default workspace folder opened on startup."
+      "description": "Default workspace folder opened on startup.",
+      "required": false,
+      "mask": false
     },
     {
       "name": "PWA_APPNAME",
       "key": "PWA_APPNAME",
       "value": "code-server",
-      "mask": false,
-      "description": "Progressive Web App name shown in browser."
+      "description": "Progressive Web App name shown in browser.",
+      "required": false,
+      "mask": false
     },
     {
       "name": "PUID",
       "key": "PUID",
       "value": "500",
-      "mask": false,
-      "description": "User ID for file permissions."
+      "description": "User ID for file permissions.",
+      "required": false,
+      "mask": false
     },
     {
       "name": "PGID",
       "key": "PGID",
       "value": "500",
-      "mask": false,
-      "description": "Group ID for file permissions."
+      "description": "Group ID for file permissions.",
+      "required": false,
+      "mask": false
     },
     {
       "name": "UMASK",
       "key": "UMASK",
       "value": "022",
-      "mask": false,
-      "description": "File creation mask for new files."
+      "description": "File creation mask for new files.",
+      "required": false,
+      "mask": false
     }
   ],
   "devices": [],
-  "gpus": []
+  "labels": []
 }

@@ -1,6 +1,6 @@
 {
   "name": "Timemachine",
-  "repo":"mbentley/timemachine:smb",
+  "repo": "mbentley/timemachine:smb",
   "registry": "https://hub.docker.com/r/mbentley/timemachine",
   "network": "host",
   "custom_ip": null,
@@ -10,17 +10,25 @@
   "post_parameters": null,
   "web_ui_url": null,
   "icon": "https://icons.veryicon.com/png/Application/OS%20X%20Yosemite%20Preview/timemachine.png",
+  "category": null,
   "project": "https://github.com/mbentley/timemachine",
   "support": "https://github.com/mbentley/timemachine/issues",
   "description": "Time Machine container to be used with Docker Visit this url to browse the docs https://github.com/mbentley/timemachine#readme",
   "paths": [
     {
       "name": "Backup Data",
-      "host": "/mnt/PLACEHOLDER/timemachine",
+      "host": "/mnt/cache/appdata/timemachine",
       "container": "/opt/PLACEHOLDER",
       "mode": "rw",
       "description": null,
       "required": true
+    },
+    {
+      "name": "Backup Data",
+      "mode": "rw",
+      "host": "/mnt/ssd-r1/2.backup/timemachine",
+      "container": "/opt/mover",
+      "description": ""
     }
   ],
   "ports": [],
@@ -28,37 +36,58 @@
     {
       "name": "TM_USERNAME",
       "key": "TM_USERNAME",
-      "default": "timemachine"
+      "value": "timemachine",
+      "description": null,
+      "required": false,
+      "mask": false
     },
-	{
+    {
       "name": "TM_GROUPNAME",
       "key": "TM_GROUPNAME",
-      "default": "timemachine"
+      "value": "timemachine",
+      "description": null,
+      "required": false,
+      "mask": false
     },
-	{
+    {
       "name": "PASSWORD",
       "key": "PASSWORD",
-      "default": "timemachine"
+      "value": "timemachine",
+      "description": null,
+      "required": false,
+      "mask": false
     },
-	{
-      "name" : "TM_UID",
+    {
+      "name": "TM_UID",
       "key": "TM_UID",
-	  "default" :"1000"
+      "value": "1000",
+      "description": null,
+      "required": false,
+      "mask": false
     },
-	{
+    {
       "name": "TM_GID",
       "key": "TM_GID",
-	  "default" : "1000"
+      "value": "1000",
+      "description": null,
+      "required": false,
+      "mask": false
     },
-	{
+    {
       "name": "SET_PERMISSIONS",
       "key": "SET_PERMISSIONS",
-	  "default" : false
+      "value": "false",
+      "description": null,
+      "required": false,
+      "mask": false
     },
-	{
+    {
       "name": "VOLUME_SIZE_LIMIT",
       "key": "VOLUME_SIZE_LIMIT",
-	  "default" : 0
+      "value": "1T",
+      "description": null,
+      "required": false,
+      "mask": false
     }
   ],
   "devices": [],

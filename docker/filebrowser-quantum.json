@@ -8,38 +8,45 @@
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:80]",
-  "readme_url": "https://github.com/linuxserver/docker-kavita/blob/main/README.md",
   "icon": "https://filebrowserquantum.com/logo.svg",
-  "category": [ "media" ],
+  "category": [
+    "Media"
+  ],
   "project": "https://github.com/gtsteffaniak/filebrowser",
   "support": "https://github.com/gtsteffaniak/filebrowser/issues",
-  "description": "The best free self-hosted web-based file manager. ",
   "donate": null,
+  "description": "The best free self-hosted web-based file manager.",
+  "readme_url": "https://github.com/linuxserver/docker-kavita/blob/main/README.md",
   "paths": [
     {
-      "name": "Share data",
+      "name": "Config",
+      "host": "/mnt/cache/appdata/filebrowser-quantum",
+      "container": "/data",
       "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/data/to/share",
-      "container": "/srv",
-      "description": "Share data"
+      "description": "Configuration directory.",
+      "required": true
     },
     {
-      "name": "Config",
+      "name": "Share Data",
+      "host": "/mnt/user/share",
+      "container": "/srv",
       "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/filebrowser-quantum/data",
-      "container": "/data",
-      "description": "Config directory"
+      "description": "Directory to expose through the file browser.",
+      "required": true
     }
   ],
   "ports": [
     {
       "name": "WebUI Port",
-      "protocol": "tcp",
       "host": "80",
       "container": "80",
-      "description": "Web interface"
+      "protocol": "tcp",
+      "description": "Web interface",
+      "required": false,
+      "mask": false
     }
   ],
   "variables": [],
-  "devices": []
+  "devices": [],
+  "labels": []
 }

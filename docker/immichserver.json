@@ -14,22 +14,23 @@
   "category": null,
   "project": null,
   "support": null,
-  "description": "Immich is a self-hosted, open-source application for managing photos and videos, designed as an alternative to cloud-based services like Google Photos.",
   "donate": null,
-  "requires": null,
+  "description": "Immich is a self-hosted, open-source application for managing photos and videos, designed as an alternative to cloud-based services like Google Photos.",
   "paths": [
     {
-      "name": "Host Path 1",
-      "host": "/mnt/PLACEHOLDER/Immich/",
+      "name": "Upload",
+      "host": "/mnt/user/photos/immich",
       "container": "/usr/src/app/upload",
-      "description": null,
-      "required": false
+      "mode": "rw",
+      "description": "Photo and video upload storage.",
+      "required": true
     },
     {
-      "name": "Host Path 2",
+      "name": "Localtime",
       "host": "/etc/localtime",
       "container": "/etc/localtime",
-      "description": null,
+      "mode": "ro",
+      "description": "Timezone configuration.",
       "required": false
     }
   ],
@@ -72,7 +73,7 @@
     {
       "name": "Host Key 4",
       "key": "DB_HOSTNAME",
-      "value": null,
+      "value": "",
       "description": null,
       "required": true,
       "mask": false
@@ -88,7 +89,7 @@
     {
       "name": "Host Key 6",
       "key": "REDIS_URL",
-      "value": null,
+      "value": "",
       "description": null,
       "required": true,
       "mask": false

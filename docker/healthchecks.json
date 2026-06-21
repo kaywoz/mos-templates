@@ -5,47 +5,51 @@
   "custom_ip": null,
   "default_shell": "sh",
   "privileged": false,
-  "extra_parameters": "--restart=unless-stopped ",
+  "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": null,
-  "readme_url": "https://github.com/healthchecks/healthchecks/blob/master/README.md",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/healthchecks.png",
-  "category": [ "utilities" ],
+  "category": [
+    "Utilities"
+  ],
   "project": "https://github.com/healthchecks/healthchecks",
   "support": "https://github.com/healthchecks/healthchecks/issues",
-  "description": "Healthchecks is a cron job monitoring service. It listens for HTTP requests and email messages from your cron jobs and scheduled tasks. When a ping does not arrive on time, Healthchecks sends out alerts.",
   "donate": null,
+  "description": "Healthchecks is a cron job monitoring service. It listens for HTTP requests and email messages from your cron jobs and scheduled tasks. When a ping does not arrive on time, Healthchecks sends out alerts.",
+  "readme_url": "https://github.com/healthchecks/healthchecks/blob/master/README.md",
   "paths": [
     {
       "name": "Data",
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/healthchecks-data",
+      "host": "/mnt/cache/appdata/healthchecks-data",
       "container": "/data",
-      "description": null
+      "mode": "rw",
+      "description": null,
+      "required": true
     },
     {
       "name": "Config",
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/healthchecks-data/config",
+      "host": "/mnt/cache/appdata/healthchecks-data/config",
       "container": "/config",
-      "description": null
+      "mode": "rw",
+      "description": null,
+      "required": true
     }
   ],
   "ports": [
     {
       "name": "WebUI Port",
-      "protocol": "tcp",
       "host": "8000",
       "container": "8000",
+      "protocol": "tcp",
       "description": "Web interface",
       "required": false,
       "mask": false
     },
     {
       "name": "SMTP Listener",
-      "protocol": "tcp",
       "host": "2525",
       "container": "2525",
+      "protocol": "tcp",
       "description": "SMTP Listener",
       "required": false,
       "mask": false
@@ -79,7 +83,7 @@
     {
       "name": "SITE_ROOT",
       "key": "SITE_ROOT",
-      "value": null,
+      "value": "https://healthchecks.example.com",
       "description": "The base public URL of your Healthchecks instance",
       "required": false,
       "mask": false
@@ -87,7 +91,7 @@
     {
       "name": "SITE_NAME",
       "key": "SITE_NAME",
-      "value": null,
+      "value": "My Healthchecks",
       "description": "Name of Site",
       "required": false,
       "mask": false
@@ -95,7 +99,7 @@
     {
       "name": "SUPERUSER_EMAIL",
       "key": "SUPERUSER_EMAIL",
-      "value": null,
+      "value": "admin@example.com",
       "description": "Superuser contact email",
       "required": false,
       "mask": false
@@ -103,7 +107,7 @@
     {
       "name": "SUPERUSER_PASSWORD",
       "key": "SUPERUSER_PASSWORD",
-      "value": null,
+      "value": "",
       "description": "Superuser password",
       "required": false,
       "mask": false
@@ -111,7 +115,7 @@
     {
       "name": "DEBUG",
       "key": "DEBUG",
-      "value": null,
+      "value": "True",
       "description": "Debug option",
       "required": false,
       "mask": false
@@ -119,7 +123,7 @@
     {
       "name": "PING_EMAIL_DOMAIN",
       "key": "PING_EMAIL_DOMAIN",
-      "value": null,
+      "value": "localhost",
       "description": "Email used for pings",
       "required": false,
       "mask": false
@@ -127,7 +131,7 @@
     {
       "name": "INTEGRATIONS_ALLOW_PRIVATE_IPS",
       "key": "INTEGRATIONS_ALLOW_PRIVATE_IPS",
-      "value": null,
+      "value": "True",
       "description": "If integrations allow private IP's",
       "required": false,
       "mask": false
@@ -135,7 +139,7 @@
     {
       "name": "SECRET_KEY",
       "key": "SECRET_KEY",
-      "value": null,
+      "value": "",
       "description": "secures HTTP sessions",
       "required": false,
       "mask": false
@@ -143,7 +147,7 @@
     {
       "name": "SITE_LOGO_URL",
       "key": "SITE_LOGO_URL",
-      "value": null,
+      "value": "https://avatars.githubusercontent.com/u/64521603?v=4",
       "description": "Url for Site logo",
       "required": false,
       "mask": false
@@ -151,11 +155,60 @@
     {
       "name": "REGISTRATION_OPEN",
       "key": "REGISTRATION_OPEN",
-      "value": null,
+      "value": "False",
       "description": "If user registration is open",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "PING_ENDPOINT",
+      "key": "PING_ENDPOINT",
+      "value": "https://healthchecks.example.com/ping/",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "ALLOWED_HOSTS",
+      "key": "ALLOWED_HOSTS",
+      "value": "*",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DEFAULT_FROM_EMAIL",
+      "key": "DEFAULT_FROM_EMAIL",
+      "value": "noreply@example.com",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "EMAIL_HOST",
+      "key": "EMAIL_HOST",
+      "value": "smtp.example.com",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "EMAIL_HOST_PASSWORD",
+      "key": "EMAIL_HOST_PASSWORD",
+      "value": "",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "EMAIL_HOST_USER",
+      "key": "EMAIL_HOST_USER",
+      "value": "",
+      "description": "",
       "required": false,
       "mask": false
     }
   ],
-  "devices": []
+  "devices": [],
+  "labels": []
 }

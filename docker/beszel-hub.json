@@ -8,40 +8,46 @@
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:8090]",
-  "readme_url": "https://github.com/henrygd/beszel/blob/main/readme.md",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/beszel.png",
-  "category": ["Monitoring"],
+  "category": [
+    "Monitoring"
+  ],
   "project": "https://github.com/henrygd/beszel",
   "support": "https://github.com/henrygd/beszel/issues",
-  "description": "Beszel is a simple, lightweight server monitoring hub with a clean web UI. It supports real-time metrics for CPU, memory, disk, and network usage across all your systems, including Docker container monitoring.",
   "donate": "https://www.buymeacoffee.com/henrygd",
+  "description": "Beszel is a simple, lightweight server monitoring hub with a clean web UI. It supports real-time metrics for CPU, memory, disk, and network usage across all your systems, including Docker container monitoring.",
+  "readme_url": "https://github.com/henrygd/beszel/blob/main/readme.md",
   "paths": [
     {
       "name": "Beszel Data",
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/beszel/data/",
+      "host": "/mnt/cache/appdata/beszel/data/",
       "container": "/beszel_data",
-      "description": "Persistent storage for Beszel Hub. Contains the database, configuration and all monitoring data."
+      "mode": "rw",
+      "description": "Persistent storage for Beszel Hub. Contains the database, configuration and all monitoring data.",
+      "required": true
     }
   ],
   "ports": [
     {
       "name": "Web UI Port",
-      "protocol": "tcp",
       "host": "8090",
       "container": "8090",
-      "description": "Web interface port for the Beszel Hub dashboard. Access via http://[YOUR-IP]:8090"
+      "protocol": "tcp",
+      "description": "Web interface port for the Beszel Hub dashboard. Access via http://[YOUR-IP]:8090",
+      "required": false,
+      "mask": false
     }
   ],
   "variables": [
     {
       "name": "App URL",
       "key": "APP_URL",
-      "value": "http://[YOUR-IP]:8090",
-      "mask": false,
-      "description": "The URL under which the Beszel Hub is reachable. Use your local server IP for local setups (e.g. http://192.168.1.100:8090) or your domain for remote access."
+      "value": "http://[IP]:[PORT]",
+      "description": "The URL under which the Beszel Hub is reachable. Use your local server IP for local setups (e.g. http://192.168.1.100:8090) or your domain for remote access.",
+      "required": false,
+      "mask": false
     }
   ],
   "devices": [],
-  "gpus": []
+  "labels": []
 }

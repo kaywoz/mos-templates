@@ -1,57 +1,67 @@
 {
-  "name": "syslog-ng",
+  "name": "Syslog-Ng",
   "repo": "lscr.io/linuxserver/syslog-ng:latest",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "sh",
   "privileged": false,
-  "extra_parameters": "--restart=unless-stopped ",
+  "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": null,
-  "readme_url": "https://github.com/linuxserver/docker-syslog-ng/blob/main/README.md",
   "icon": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syslog-ng-logo.png",
-  "category": [ "utilities" ],
+  "category": [
+    "Utilities"
+  ],
   "project": "https://github.com/linuxserver/docker-syslog-ng",
   "support": "https://github.com/linuxserver/docker-syslog-ng/issues",
-  "description": "syslog-ng allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.",
   "donate": null,
+  "description": "syslog-ng allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.",
+  "readme_url": "https://github.com/linuxserver/docker-syslog-ng/blob/main/README.md",
   "paths": [
     {
-      "name": "Config directory" ,
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/syslog-ng/config",
+      "name": "Config directory",
+      "host": "/mnt/cache/appdata/syslog-ng/config",
       "container": "/config",
-      "description": "Config directory"
+      "mode": "rw",
+      "description": "Config directory",
+      "required": true
     },
     {
-      "name": "Log directory" ,
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/syslog-ng/log",
+      "name": "Log directory",
+      "host": "/mnt/cache/appdata/syslog-ng/log",
       "container": "/var/log",
-      "description": "Log directory"
+      "mode": "rw",
+      "description": "Log directory",
+      "required": true
     }
   ],
   "ports": [
-     {
+    {
       "name": "Syslog Port",
-      "protocol": "udp",
       "host": "514",
       "container": "5514",
-      "description": "Syslog Port"
+      "protocol": "udp",
+      "description": "Syslog Port",
+      "required": false,
+      "mask": false
     },
-     {
+    {
       "name": "Syslog over TCP",
-      "protocol": "tcp",
       "host": "601",
       "container": "6601",
-      "description": "Syslog over TCP"
-    },
-     {
-      "name": "Syslog over TLS",
       "protocol": "tcp",
+      "description": "Syslog over TCP",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Syslog over TLS",
       "host": "6514",
       "container": "6514",
-      "description": "Syslog over TLS"
+      "protocol": "tcp",
+      "description": "Syslog over TLS",
+      "required": false,
+      "mask": false
     }
   ],
   "variables": [
@@ -74,7 +84,7 @@
     {
       "name": "TZ",
       "key": "TZ",
-      "value": "Etc/UTC",
+      "value": "Etc/Stockholm",
       "description": "Timezone",
       "required": true,
       "mask": false
@@ -82,10 +92,12 @@
     {
       "name": "LOG_TO_STDOUT",
       "key": "LOG_TO_STDOUT",
-      "value": null,
+      "value": "true",
       "description": "f set to true container will log to stdout, otherwise will log to /config/log/",
       "required": false,
       "mask": false
     }
-  ]
+  ],
+  "devices": [],
+  "labels": []
 }

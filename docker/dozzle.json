@@ -8,31 +8,93 @@
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:8080]",
-  "readme_url": "https://github.com/amir20/dozzle/blob/master/README.md",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/dozzle.png",
-  "category": [ "productivity" ],
+  "category": [
+    "Productivity"
+  ],
   "project": "https://github.com/amir20/dozzle",
   "support": "https://github.com/amir20/dozzle/issues",
-  "description": "Dozzle is a small lightweight application with a web based interface to monitor Docker logs. It doesn't store any log files. It is for live monitoring of your container logs only.",
   "donate": "https://buymeacoffee.com/amirraminfar",
+  "description": "Dozzle is a small lightweight application with a web based interface to monitor Docker logs. It doesn't store any log files. It is for live monitoring of your container logs only.",
+  "readme_url": "https://github.com/amir20/dozzle/blob/master/README.md",
   "paths": [
     {
       "name": "Docker",
-      "mode": "rw",
       "host": "/var/run/docker.sock",
       "container": "/var/run/docker.sock",
-      "description": "Docker socket for accessing container logs."
+      "mode": "rw",
+      "description": "Docker socket for accessing container logs.",
+      "required": true
+    },
+    {
+      "name": "Docker data",
+      "mode": "rw",
+      "host": "/mnt/cache/appdata/dozzle/data",
+      "container": "/data",
+      "description": ""
     }
   ],
   "ports": [
     {
       "name": "WebUI Port",
-      "protocol": "tcp",
       "host": "8080",
       "container": "8080",
-      "description": "Web interface port for viewing container logs."
+      "protocol": "tcp",
+      "description": "Web interface port for viewing container logs.",
+      "required": false,
+      "mask": false
     }
   ],
-  "variables": [],
-  "devices": []
+  "variables": [
+    {
+      "name": "DOZZLE_ENABLE_ACTIONS",
+      "key": "DOZZLE_ENABLE_ACTIONS",
+      "value": "true",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DOZZLE_ENABLE_SHELL",
+      "key": "DOZZLE_ENABLE_SHELL",
+      "value": "true",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DOZZLE_HOSTNAME",
+      "key": "DOZZLE_HOSTNAME",
+      "value": "dozzle",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DOZZLE_REMOTE_AGENT",
+      "key": "DOZZLE_REMOTE_AGENT",
+      "value": "",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DOZZLE_FILTER",
+      "key": "DOZZLE_FILTER",
+      "value": "",
+      "description": "",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "DOZZLE_NO_ANALYTICS",
+      "key": "DOZZLE_NO_ANALYTICS",
+      "value": "true",
+      "description": "",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": [],
+  "labels": []
 }

@@ -8,52 +8,62 @@
   "extra_parameters": "--restart=unless-stopped --cap-add SYS_RAWIO --cap-add SYS_ADMIN --device=/dev/sda --device=/dev/sdb --device=/dev/mmcblk0 --device=/dev/sdc --device=/dev/nvme0 --device=/dev/nvme1",
   "post_parameters": null,
   "web_ui_url": null,
-  "readme_url": "https://github.com/AnalogJ/scrutiny/blob/master/README.md",
   "icon": "https://github.com/AnalogJ/scrutiny/raw/master/webapp/frontend/src/assets/images/logo/scrutiny-logo-dark.png",
-  "category": [ "utilities" ],
+  "category": [
+    "Utilities"
+  ],
   "project": "https://github.com/AnalogJ/scrutiny",
   "support": "https://github.com/AnalogJ/scrutiny/issues",
-  "description": "WebUI for smartd S.M.A.R.T monitoring",
   "donate": null,
+  "description": "WebUI for smartd S.M.A.R.T monitoring",
+  "readme_url": "https://github.com/AnalogJ/scrutiny/blob/master/README.md",
   "paths": [
     {
       "name": "Config",
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/scrutiny",
+      "host": "/mnt/cache/appdata/scrutiny",
       "container": "/opt/scrutiny/config",
-      "description": null
+      "mode": "rw",
+      "description": null,
+      "required": true
     },
     {
       "name": "InfluxDB",
-      "mode": "rw",
-      "host": "/mnt/PLACEHOLDER/scrutiny/influxdb2",
+      "host": "/mnt/cache/appdata/scrutiny/influxdb2",
       "container": "/opt/scrutiny/influxdb",
-      "description": null
+      "mode": "rw",
+      "description": null,
+      "required": true
     },
     {
       "name": "Docker socket",
-      "mode": "ro",
       "host": "/run/udev",
       "container": "/run/udev",
-      "description": null
+      "mode": "ro",
+      "description": null,
+      "required": true
     }
   ],
   "ports": [
     {
       "name": "WebUI Port",
-      "protocol": "tcp",
       "host": "8080",
       "container": "8080",
-      "description": "Web interface port for viewing container logs."
+      "protocol": "tcp",
+      "description": "Web interface port for viewing container logs.",
+      "required": false,
+      "mask": false
     },
     {
       "name": "InfluxDB Port",
-      "protocol": "tcp",
       "host": "8086",
       "container": "8086",
-      "description": "InfluxDB"
+      "protocol": "tcp",
+      "description": "InfluxDB",
+      "required": false,
+      "mask": false
     }
   ],
   "variables": [],
-  "devices": []
+  "devices": [],
+  "labels": []
 }
