@@ -1,5 +1,11 @@
 # 📦 kaywoz's MOS Templates
 
+![Templates](https://img.shields.io/badge/templates-29-blue?style=flat-square&logo=docker)
+![License](https://img.shields.io/github/license/kaywoz/mos-templates?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/kaywoz/mos-templates?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/kaywoz/mos-templates?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/kaywoz/mos-templates?style=flat-square)
+
 Templates for the **MOS Hub** – a collection of templates that are **directly discoverable inside the MOS Hub**.
 ---
 
