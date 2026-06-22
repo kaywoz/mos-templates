@@ -6,7 +6,7 @@
   "default_shell": "sh",
   "privileged": false,
   "extra_parameters": "--restart=unless-stopped",
-  "post_parameters": "server start disable-csrf-token-checks insecure address=0.0.0.0:51515 server-username=USERNAME server-password=SECRET_PASSWORD",
+  "post_parameters": "server start --disable-csrf-token-checks --insecure --address=0.0.0.0:51515 --server-username=USERNAME --server-password=SECRET_PASSWORD",
   "web_ui_url": "http://[IP]:[PORT:51515]",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/kopia.png",
   "category": [
