@@ -51,7 +51,16 @@
       "mask": false
     }
   ],
-  "variables": [],
+  "variables": [  
+    {
+      "name": "LD_PRELOAD",
+      "key": "LD_PRELOAD",
+      "value": "/usr/lib/libmimalloc-secure.so.NOPE",
+      "description": "enable mimalloc by replacing 'NOPE' with '2' for a nice speed-boost (will use twice as much ram)",
+      "required": false,
+      "mask": false
+    }
+  ],
   "devices": [],
   "labels": []
 }
