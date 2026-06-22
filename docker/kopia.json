@@ -1,0 +1,86 @@
+{
+  "name": "Kopia",
+  "repo": "kopia/kopia:latest",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": "server start disable-csrf-token-checks insecure address=0.0.0.0:51515 server-username=USERNAME server-password=SECRET_PASSWORD",
+  "web_ui_url": "http://[IP]:[PORT:51515]",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/kopia.png",
+  "category": [
+    "Media"
+  ],
+  "project": "https://github.com/kopia/kopia/",
+  "support": "https://github.com/kopia/kopia/issues",
+  "donate": "https://opencollective.com/Kavita#sponsor",
+  "description": "Kopia is a fast and secure open-source backup/restore tool that allows you to create encrypted snapshots of your data and save the snapshots to remote or cloud storage of your choice, to network-attached storage or server, or locally on your machine.",
+  "readme_url": "https://github.com/kopia/kopia/blob/master/README.md",
+  "paths": [
+    {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/kopia/config/dir",
+      "container": "/app/config",
+      "mode": "rw",
+      "description": "Kopia configuration directory.",
+      "required": true
+    },
+    {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/kopia/cache/dir",
+      "container": "/app/cache",
+      "mode": "rw",
+      "description": "Kopia cache directory.",
+      "required": true
+    },
+        {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/kopia/logs/dir",
+      "container": "/app/logs",
+      "mode": "rw",
+      "description": "Kopia logs directory.",
+      "required": true
+    },
+        {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/kopia/repository/dir",
+      "container": "/repository",
+      "mode": "rw",
+      "description": "Kopia repository directory.",
+      "required": true
+    },
+        {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/kopia/tmp/dir",
+      "container": "/tmp:shared",
+      "mode": "rw",
+      "description": "Kopia tmp directory.",
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI Port",
+      "host": "51515",
+      "container": "51515",
+      "protocol": "tcp",
+      "description": "Web interface port",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "KOPIA_PASSWORD",
+      "key": "KOPIA_PASSWORD",
+      "value": "supersecretpassword",
+      "description": "KOPIA_PASSWORD",
+      "required": true,
+      "mask": false
+    }
+
+  ],
+  "devices": [],
+  "labels": []
+}
