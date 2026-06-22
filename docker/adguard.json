@@ -2,7 +2,7 @@
   "name": "AdGuard Home",
   "repo": "adguard/adguardhome",
   "registry": "https://registry.hub.docker.com/r/adguard/adguardhome",
-  "network": "br0",
+  "network": "bridge",
   "custom_ip": null,
   "default_shell": "bash",
   "privileged": false,

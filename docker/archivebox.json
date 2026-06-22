@@ -10,7 +10,7 @@
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:8000]/",
   "icon": "https://raw.githubusercontent.com/Mainfrezzer/UnRaid-Templates/main/icon/archivebox.png",
-  "category": null,
+  "category": "Archiving",
   "project": "https://github.com/ArchiveBox/ArchiveBox",
   "support": "https://forums.unraid.net/topic/182778-support-mainfrezzer-docker-repo/",
   "description": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view websites offline.\r\rWithout active preservation effort, everything on the internet eventually disappears or degrades. Archive.org does a great job as a centralized service, but saved URLs have to be public, and they can't save every type of content.\r\rArchiveBox is an open source tool that lets organizations & individuals archive both public & private web content while retaining control over their data. It can be used to save copies of bookmarks, preserve evidence for legal cases, backup photos from FB/Insta/Flickr or media from YT/Soundcloud/etc., save research papers, and more...",

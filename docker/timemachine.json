@@ -22,13 +22,6 @@
       "mode": "rw",
       "description": null,
       "required": true
-    },
-    {
-      "name": "Backup Data",
-      "mode": "rw",
-      "host": "/mnt/ssd-r1/2.backup/timemachine",
-      "container": "/opt/mover",
-      "description": ""
     }
   ],
   "ports": [],

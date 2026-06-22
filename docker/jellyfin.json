@@ -49,20 +49,6 @@
       "mode": "rw",
       "description": "Optional XMLTV guide data directory.",
       "required": false
-    },
-    {
-      "name": "Path: /data/xmovies",
-      "mode": "rw",
-      "host": "/mnt/ssd-r1/1.data/media/root/xmovies",
-      "container": "/data/xmovies",
-      "description": "Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc."
-    },
-    {
-      "name": "Path: /data/xtvshows",
-      "mode": "rw",
-      "host": "/mnt/ssd-r1/1.data/media/root/xtvshows",
-      "container": "/data/xtvshows",
-      "description": "Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc."
     }
   ],
   "ports": [

@@ -7,7 +7,7 @@
   "privileged": false,
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
-  "web_ui_url": null,
+  "web_ui_url": "http://[IP]:[PORT:5000]",
   "icon": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syslog-ng-logo.png",
   "category": [
     "Utilities"

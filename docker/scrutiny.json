@@ -5,9 +5,9 @@
   "custom_ip": null,
   "default_shell": "sh",
   "privileged": false,
-  "extra_parameters": "--restart=unless-stopped --cap-add SYS_RAWIO --cap-add SYS_ADMIN --device=/dev/sda --device=/dev/sdb --device=/dev/mmcblk0 --device=/dev/sdc --device=/dev/nvme0 --device=/dev/nvme1",
+  "extra_parameters": "--restart=unless-stopped --cap-add SYS_RAWIO --cap-add SYS_ADMIN --device=/dev/sda --device=/dev/sdb --device=/dev/sdc --device=/dev/nvme0 --device=/dev/nvme1",
   "post_parameters": null,
-  "web_ui_url": null,
+  "web_ui_url": "http://[IP]:[PORT:8080]",
   "icon": "https://github.com/AnalogJ/scrutiny/raw/master/webapp/frontend/src/assets/images/logo/scrutiny-logo-dark.png",
   "category": [
     "Utilities"

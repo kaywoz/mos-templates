@@ -7,7 +7,7 @@
   "privileged": false,
   "extra_parameters": "--restart=unless-stopped --stop-timeout 60 --cap-add sys_admin --cap-add sys_admin --security-opt apparmor:unconfined",
   "post_parameters": null,
-  "web_ui_url": null,
+  "web_ui_url": "http://[IP]:[PORT:80]",
   "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/xen-orchestra.png",
   "category": [
     "Utilities"

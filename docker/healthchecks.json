@@ -7,7 +7,7 @@
   "privileged": false,
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
-  "web_ui_url": null,
+  "web_ui_url": "http://[IP]:[PORT:8000]",
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/healthchecks.png",
   "category": [
     "Utilities"

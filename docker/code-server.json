@@ -51,7 +51,7 @@
       "name": "HASHED_PASSWORD",
       "key": "HASHED_PASSWORD",
       "value": "",
-      "description": "Pre-hashed password for web interface (alternative to PASSWORD).",
+      "description": "Pre-hashed password for web interface (alternative to PASSWORD). (",
       "required": false,
       "mask": true
     },

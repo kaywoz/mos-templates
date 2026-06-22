@@ -23,7 +23,7 @@
       "host": "/var/run/docker.sock",
       "container": "/var/run/docker.sock",
       "mode": "rw",
-      "description": "Docker socket for accessing container logs.",
+      "description": "Docker socket for accessing container logs/and/or stopping/starting containers.",
       "required": true
     },
     {

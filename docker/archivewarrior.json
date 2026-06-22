@@ -7,10 +7,10 @@
   "privileged": false,
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
-  "web_ui_url": null,
+  "web_ui_url": "http://[IP]:[PORT:8001]/",
   "icon": "https://tracker.archiveteam.org/how-to-help/warrior-logo.png",
   "category": [
-    "Utilities"
+    "Archiving"
   ],
   "project": "https://github.com/ArchiveTeam/warrior-dockerfile",
   "support": "https://github.com/ArchiveTeam/warrior-dockerfile/issues",

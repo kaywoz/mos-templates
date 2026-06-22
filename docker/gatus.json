@@ -7,8 +7,8 @@
   "privileged": false,
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
-  "web_ui_url": null,
-  "icon": "https://github.com/TwiN/gatus/raw/master/.github/assets/logo-with-dark-text.png",
+  "web_ui_url": "http://[IP]:[PORT:8080]",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/gatus.png",
   "category": [
     "Utilities"
   ],

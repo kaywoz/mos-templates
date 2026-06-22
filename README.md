@@ -24,3 +24,4 @@ MOS Templates integrate directly with the **MOS Hub** and provide:
 
 Want to add your own template? Check out the full contribution guide on one of the creator's sites!
 **[documentation site](https://j000k3r.github.io/MOS-Templates/)**.
+

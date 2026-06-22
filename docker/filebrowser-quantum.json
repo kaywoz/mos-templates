@@ -8,9 +8,9 @@
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:80]",
-  "icon": "https://filebrowserquantum.com/logo.svg",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/filebrowser-quantum.png",
   "category": [
-    "Media"
+    "Utilities"
   ],
   "project": "https://github.com/gtsteffaniak/filebrowser",
   "support": "https://github.com/gtsteffaniak/filebrowser/issues",
@@ -33,6 +33,14 @@
       "mode": "rw",
       "description": "Directory to expose through the file browser.",
       "required": true
+    },
+    {
+      "name": "Database",
+      "host": "/mnt/cache/appdata/filebrowser-quantum/database",
+      "container": "/home/filebrowser/data",
+      "mode": "rw",
+      "description": "Database directory for filebrowser.",
+      "required": false
     }
   ],
   "ports": [
