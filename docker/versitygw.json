@@ -74,60 +74,105 @@
 
   ],
   "variables": [
+  The category "Cloud" is fine as Title Case, but the real issue is the "Variables" block — in MOS templates the correct key is "variables" (lowercase), and same goes for all other top-level keys. Let me redo it with consistent lowercase keys throughout:
+json{
+  "name": "VersityGW",
+  "overview": "S3-compatible object storage gateway with POSIX backend, IAM support, and web UI.",
+  "category": "Cloud",
+  "icon": "https://raw.githubusercontent.com/versity/versitygw/main/docs/images/versitygw.png",
+  "image": "ghcr.io/versity/versitygw:latest",
+  "ports": [
     {
-      "Name": "ROOT_ACCESS_KEY",
-      "Value": "[[ROOT_ACCESS_KEY]]",
-      "Description": "Root S3 access key"
+      "containerPort": 7070,
+      "hostPort": "[[S3_PORT]]",
+      "protocol": "tcp",
+      "description": "S3 API port"
     },
     {
-      "Name": "ROOT_SECRET_KEY",
-      "Value": "[[ROOT_SECRET_KEY]]",
-      "Description": "Root S3 secret key"
+      "containerPort": 7071,
+      "hostPort": "[[ADMIN_PORT]]",
+      "protocol": "tcp",
+      "description": "Admin API port"
     },
     {
-      "Name": "VGW_PORT",
-      "Value": ":7070",
-      "Description": "Internal S3 API listen port"
+      "containerPort": 8080,
+      "hostPort": "[[WEBUI_PORT]]",
+      "protocol": "tcp",
+      "description": "Web UI port"
+    }
+  ],
+  "env": [
+    {
+      "name": "ROOT_ACCESS_KEY",
+      "value": "[[ROOT_ACCESS_KEY]]",
+      "description": "Root S3 access key"
     },
     {
-      "Name": "VGW_IAM_DIR",
-      "Value": "/data/iam",
-      "Description": "IAM data directory inside container"
+      "name": "ROOT_SECRET_KEY",
+      "value": "[[ROOT_SECRET_KEY]]",
+      "description": "Root S3 secret key"
     },
     {
-      "Name": "VGW_VERSIONING_DIR",
-      "Value": "/data/versioning",
-      "Description": "Versioning metadata directory inside container"
+      "name": "VGW_PORT",
+      "value": ":7070",
+      "description": "Internal S3 API listen port"
     },
     {
-      "Name": "VGW_BACKEND",
-      "Value": "posix",
-      "Description": "Storage backend type"
+      "name": "VGW_IAM_DIR",
+      "value": "/data/iam",
+      "description": "IAM data directory inside container"
     },
     {
-      "Name": "VGW_BACKEND_ARGS",
-      "Value": "/data/s3",
-      "Description": "POSIX backend root path inside container"
+      "name": "VGW_VERSIONING_DIR",
+      "value": "/data/versioning",
+      "description": "Versioning metadata directory inside container"
     },
     {
-      "Name": "VGW_ADMIN_PORT",
-      "Value": ":7071",
-      "Description": "Internal admin API listen port"
+      "name": "VGW_BACKEND",
+      "value": "posix",
+      "description": "Storage backend type"
     },
     {
-      "Name": "VGW_WEBUI_PORT",
-      "Value": ":8080",
-      "Description": "Internal web UI listen port"
+      "name": "VGW_BACKEND_ARGS",
+      "value": "/data/s3",
+      "description": "POSIX backend root path inside container"
     },
     {
-      "Name": "VGW_WEBUI_GATEWAYS",
-      "Value": "http://[[SERVER_IP]]:[[S3_PORT]]",
-      "Description": "Public S3 gateway URL shown in web UI"
+      "name": "VGW_ADMIN_PORT",
+      "value": ":7071",
+      "description": "Internal admin API listen port"
     },
     {
-      "Name": "VGW_WEBUI_ADMIN_GATEWAYS",
-      "Value": "http://[[SERVER_IP]]:[[ADMIN_PORT]]",
-      "Description": "Public admin gateway URL shown in web UI"
+      "name": "VGW_WEBUI_PORT",
+      "value": ":8080",
+      "description": "Internal web UI listen port"
+    },
+    {
+      "name": "VGW_WEBUI_GATEWAYS",
+      "value": "http://[[SERVER_IP]]:[[S3_PORT]]",
+      "description": "Public S3 gateway URL shown in web UI"
+    },
+    {
+      "name": "VGW_WEBUI_ADMIN_GATEWAYS",
+      "value": "http://[[SERVER_IP]]:[[ADMIN_PORT]]",
+      "description": "Public admin gateway URL shown in web UI"
+    }
+  ],
+  "volumes": [
+    {
+      "containerPath": "/data/s3",
+      "hostPath": "[[DATA_PATH]]/s3",
+      "description": "S3 object storage data"
+    },
+    {
+      "containerPath": "/data/versioning",
+      "hostPath": "[[DATA_PATH]]/versioning",
+      "description": "Versioning metadata"
+    },
+    {
+      "containerPath": "/data/iam",
+      "hostPath": "[[DATA_PATH]]/iam",
+      "description": "IAM configuration"
     }
   ],
   "devices": [],
