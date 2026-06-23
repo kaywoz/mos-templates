@@ -28,7 +28,7 @@
     },
     {
       "name": "Shadow namespace for object versioning",
-      "host": "/mnt/cache/appdata/versitygw//data/versioning",
+      "host": "/mnt/cache/appdata/versitygw/data/versioning",
       "container": "/data/versioning",
       "mode": "rw",
       "description": "Shadow namespace for object versioning",
@@ -75,20 +75,59 @@
   ],
   "variables": [
     {
-      "name": "ROOT_ACCESS_KEY",
-      "key": "ROOT_ACCESS_KEY",
-      "value": "supersecretpassword",
-      "description": "ROOT_ACCESS_KEY",
-      "required": true,
-      "mask": false
+      "Name": "ROOT_ACCESS_KEY",
+      "Value": "[[ROOT_ACCESS_KEY]]",
+      "Description": "Root S3 access key"
     },
     {
-      "name": "ROOT_SECRET_KEY",
-      "key": "ROOT_SECRET_KEY",
-      "value": "supersecretpassword",
-      "description": "ROOT_SECRET_KEY",
-      "required": true,
-      "mask": false
+      "Name": "ROOT_SECRET_KEY",
+      "Value": "[[ROOT_SECRET_KEY]]",
+      "Description": "Root S3 secret key"
+    },
+    {
+      "Name": "VGW_PORT",
+      "Value": ":7070",
+      "Description": "Internal S3 API listen port"
+    },
+    {
+      "Name": "VGW_IAM_DIR",
+      "Value": "/data/iam",
+      "Description": "IAM data directory inside container"
+    },
+    {
+      "Name": "VGW_VERSIONING_DIR",
+      "Value": "/data/versioning",
+      "Description": "Versioning metadata directory inside container"
+    },
+    {
+      "Name": "VGW_BACKEND",
+      "Value": "posix",
+      "Description": "Storage backend type"
+    },
+    {
+      "Name": "VGW_BACKEND_ARGS",
+      "Value": "/data/s3",
+      "Description": "POSIX backend root path inside container"
+    },
+    {
+      "Name": "VGW_ADMIN_PORT",
+      "Value": ":7071",
+      "Description": "Internal admin API listen port"
+    },
+    {
+      "Name": "VGW_WEBUI_PORT",
+      "Value": ":8080",
+      "Description": "Internal web UI listen port"
+    },
+    {
+      "Name": "VGW_WEBUI_GATEWAYS",
+      "Value": "http://[[SERVER_IP]]:[[S3_PORT]]",
+      "Description": "Public S3 gateway URL shown in web UI"
+    },
+    {
+      "Name": "VGW_WEBUI_ADMIN_GATEWAYS",
+      "Value": "http://[[SERVER_IP]]:[[ADMIN_PORT]]",
+      "Description": "Public admin gateway URL shown in web UI"
     }
   ],
   "devices": [],
