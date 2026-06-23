@@ -8,15 +8,15 @@
   "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": "http://[IP]:[PORT:8080]",
-  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/kopia.png",
+  "icon": "https://github.com/versity/versitygw/raw/assets/assets/logo.svg",
   "category": [
-    "Backup"
+    "Utilities"
   ],
-  "project": "https://github.com/kopia/kopia/",
-  "support": "https://github.com/kopia/kopia/issues",
+  "project": "https://github.com/versity/versitygw",
+  "support": "https://github.com/versity/versitygw/issues",
   "donate": null,
-  "description": "Kopia is a fast and secure open-source backup/restore tool that allows you to create encrypted snapshots of your data and save the snapshots to remote or cloud storage of your choice, to network-attached storage or server, or locally on your machine.",
-  "readme_url": "https://github.com/kopia/kopia/blob/master/README.md",
+  "description": "A High-Performance S3 Translation Service",
+  "readme_url": "https://github.com/versity/versitygw/blob/main/README.md",
   "paths": [
     {
       "name": "S3 object data (the gateway root)",
