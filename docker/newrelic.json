@@ -10,7 +10,7 @@
   "post_parameters": null,
   "cpu_set": null,
   "web_ui_url": null,
-  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/new-relic.png",
+  "icon": "https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_vertical.png",
   "category": [ "Monitoring" ],
   "project": "https://newrelic.com",
   "support": "https://github.com/newrelic/infrastructure-agent/issues",
