@@ -28,7 +28,7 @@
     },
     {
       "name": "Shadow namespace for object versioning",
-      "host": "/mnt/cache/appdata/versitygw//data/versioning",
+      "host": "/mnt/cache/appdata/versitygw/data/versioning",
       "container": "/data/versioning",
       "mode": "rw",
       "description": "Shadow namespace for object versioning",
@@ -143,14 +143,6 @@
       "key": "VGW_WEBUI_ADMIN_GATEWAYS",
       "value": "http://localhost:7071",
       "description": "VGW_WEBUI_ADMIN_GATEWAYS",
-      "required": true,
-      "mask": false
-    },
-    {
-      "name": "ROOT_SECRET_KEY",
-      "key": "ROOT_SECRET_KEY",
-      "value": "supersecretpassword",
-      "description": "ROOT_SECRET_KEY",
       "required": true,
       "mask": false
     }
