@@ -1,0 +1,79 @@
+{
+  "name": "SeaweedFS",
+  "repo": "chrislusf/seaweedfs:latest",
+  "registry": "https://hub.docker.com/r/chrislusf/seaweedfs",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "cpu_set": null,
+  "web_ui_url": "http://[IP]:[PORT:8888]",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/seaweedfs.png",
+  "category": [ "Storage" ],
+  "project": "https://github.com/seaweedfs/seaweedfs",
+  "support": "https://github.com/seaweedfs/seaweedfs/issues",
+  "donate": null,
+  "description": "Fast distributed storage system for blobs, objects and files. Single-container mode runs master, volume server, filer, and S3 gateway all-in-one. Supports S3 API, WebDAV, and POSIX FUSE mount.",
+  "command": "server -dir=/data -s3 -s3.port=8333 -filer -ip.bind=0.0.0.0 -master.volumeSizeLimitMB=1024",
+  "paths": [
+    {
+      "name": "Data",
+      "host": "/mnt/cache/appdata/seaweedfs",
+      "container": "/data",
+      "mode": "rw",
+      "description": "SeaweedFS data directory. Stores volumes, filer metadata (SQLite), and S3 bucket data. Must be owned by UID 1000.",
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "S3 API",
+      "host": "8333",
+      "container": "8333",
+      "protocol": "tcp",
+      "description": "S3-compatible API endpoint.",
+      "required": true,
+      "mask": false
+    },
+    {
+      "name": "Filer / Web UI",
+      "host": "8888",
+      "container": "8888",
+      "protocol": "tcp",
+      "description": "Filer HTTP interface and file browser.",
+      "required": true,
+      "mask": false
+    },
+    {
+      "name": "Master",
+      "host": "9333",
+      "container": "9333",
+      "protocol": "tcp",
+      "description": "Master server port.",
+      "required": true,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "S3 Access Key",
+      "key": "AWS_ACCESS_KEY_ID",
+      "value": "seaweedfsadmin",
+      "description": "S3 access key for authentication.",
+      "required": true,
+      "mask": false
+    },
+    {
+      "name": "S3 Secret Key",
+      "key": "AWS_SECRET_ACCESS_KEY",
+      "value": "",
+      "description": "S3 secret key for authentication.",
+      "required": true,
+      "mask": true
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
