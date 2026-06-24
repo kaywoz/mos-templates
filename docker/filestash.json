@@ -1,0 +1,60 @@
+{
+  "name": "Filestash",
+  "repo": "machines/filestash:latest",
+  "registry": "https://hub.docker.com/r/machines/filestash",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "cpu_set": null,
+  "web_ui_url": "http://[IP]:[PORT:8334]",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/filestash.png",
+  "category": [ "Storage" ],
+  "project": "https://www.filestash.app",
+  "support": "https://github.com/mickael-kerjean/filestash/issues",
+  "donate": null,
+  "description": "A storage agnostic file manager with a web UI supporting FTP, SFTP, S3, SMB, WebDAV, Git, LDAP and more. Connect it to your existing storage — no data migration required.",
+  "paths": [
+    {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/filestash",
+      "container": "/app/data/state",
+      "mode": "rw",
+      "description": "Filestash configuration and state directory.",
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI",
+      "host": "8334",
+      "container": "8334",
+      "protocol": "tcp",
+      "description": "Web interface port.",
+      "required": true,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "Application URL",
+      "key": "APPLICATION_URL",
+      "value": "",
+      "description": "Public URL where Filestash is accessible (e.g. https://files.example.com). Leave blank for local use.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Canary",
+      "key": "CANARY",
+      "value": "true",
+      "description": "Enable canary/beta features.",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
