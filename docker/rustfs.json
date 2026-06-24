@@ -1,0 +1,60 @@
+{
+  "name": "RustFS",
+  "repo": "rustfs/rustfs:latest",
+  "registry": "https://hub.docker.com/r/rustfs/rustfs",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "cpu_set": null,
+  "web_ui_url": "http://[IP]:[PORT:9001]",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/minio.png",
+  "category": [ "Storage" ],
+  "project": "https://rustfs.com",
+  "support": "https://github.com/rustfs/rustfs/issues",
+  "donate": null,
+  "description": "High-performance, S3-compatible distributed object storage built in Rust. 2.3x faster than MinIO for small object payloads. Licensed under Apache 2.0.",
+  "paths": [
+    {
+      "name": "Data",
+      "host": "/mnt/cache/appdata/rustfs/data",
+      "container": "/data",
+      "mode": "rw",
+      "description": "Object storage data directory. Must be owned by UID 10001 on the host.",
+      "required": true
+    },
+    {
+      "name": "Logs",
+      "host": "/mnt/cache/appdata/rustfs/logs",
+      "container": "/logs",
+      "mode": "rw",
+      "description": "Log output directory. Must be owned by UID 10001 on the host.",
+      "required": false
+    }
+  ],
+  "ports": [
+    {
+      "name": "S3 API",
+      "host": "9000",
+      "container": "9000",
+      "protocol": "tcp",
+      "description": "S3-compatible API endpoint.",
+      "required": true,
+      "mask": false
+    },
+    {
+      "name": "Web Console",
+      "host": "9001",
+      "container": "9001",
+      "protocol": "tcp",
+      "description": "Web management console. Default credentials: rustfsadmin / rustfsadmin.",
+      "required": true,
+      "mask": false
+    }
+  ],
+  "variables": [],
+  "devices": [],
+  "labels": []
+}
