@@ -1,0 +1,58 @@
+{
+  "name": "New Relic Infrastructure",
+  "repo": "newrelic/infrastructure:latest",
+  "registry": "https://hub.docker.com/r/newrelic/infrastructure",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": true,
+  "extra_parameters": "--restart=unless-stopped --cap-add=SYS_PTRACE --pid=host",
+  "post_parameters": null,
+  "cpu_set": null,
+  "web_ui_url": null,
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/new-relic.png",
+  "category": [ "Monitoring" ],
+  "project": "https://newrelic.com",
+  "support": "https://github.com/newrelic/infrastructure-agent/issues",
+  "donate": null,
+  "description": "New Relic Infrastructure agent for host and container monitoring. Reports system metrics, process data, and Docker container telemetry to New Relic.",
+  "paths": [
+    {
+      "name": "Host Root",
+      "host": "/",
+      "container": "/host",
+      "mode": "ro",
+      "description": "Read-only bind of the host root filesystem. Required for host-level metric collection.",
+      "required": true
+    },
+    {
+      "name": "Docker Socket",
+      "host": "/var/run/docker.sock",
+      "container": "/var/run/docker.sock",
+      "mode": "rw",
+      "description": "Docker socket for container discovery and monitoring.",
+      "required": true
+    },
+    {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/newrelic-infra",
+      "container": "/etc/newrelic-infra",
+      "mode": "rw",
+      "description": "New Relic Infrastructure agent configuration directory.",
+      "required": true
+    }
+  ],
+  "ports": [],
+  "variables": [
+    {
+      "name": "License Key",
+      "key": "NRIA_LICENSE_KEY",
+      "value": "",
+      "description": "New Relic license key. Found under Account Settings in the New Relic UI.",
+      "required": true,
+      "mask": true
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
