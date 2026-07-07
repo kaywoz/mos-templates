@@ -1,0 +1,8 @@
+{
+  "name": "Atuin",
+  "category": [ "Utilities" ],
+  "description": "Shell history sync server. Syncs your encrypted shell history across all your machines. Requires the Atuin client installed on each machine pointing to this server.",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/atuin.png",
+  "webui": "http://{IP}:8888",
+  "website": "https://atuin.sh"
+}
