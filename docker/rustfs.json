@@ -10,7 +10,7 @@
   "post_parameters": null,
   "cpu_set": null,
   "web_ui_url": "http://[IP]:[PORT:9001]",
-  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/minio.png",
+  "icon": "https://avatars.githubusercontent.com/u/151849438?s=200&v=4",
   "category": [ "Storage" ],
   "project": "https://rustfs.com",
   "support": "https://github.com/rustfs/rustfs/issues",
