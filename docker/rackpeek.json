@@ -10,7 +10,7 @@
   "post_parameters": null,
   "cpu_set": null,
   "web_ui_url": "http://[IP]:[PORT:8080]",
-  "icon": "https://raw.githubusercontent.com/Timmoth/RackPeek/main/assets/rackpeek_banner_thin.png",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/rackpeek.png",
   "category": [ "Utilities" ],
   "project": "https://timmoth.github.io/RackPeek/",
   "support": "https://github.com/Timmoth/RackPeek/issues",
