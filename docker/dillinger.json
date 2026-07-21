@@ -1,0 +1,68 @@
+{
+  "name": "Dillinger",
+  "repo": "lscr.io/linuxserver/dillinger:latest",
+  "registry": "https://hub.docker.com/r/linuxserver/dillinger",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "bash",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "cpu_set": null,
+  "web_ui_url": "http://[IP]:[PORT:8080]",
+  "icon": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dillinger.png",
+  "category": [ "Productivity" ],
+  "project": "https://github.com/joemccann/dillinger",
+  "support": "https://github.com/linuxserver/docker-dillinger/issues",
+  "donate": null,
+  "description": "A cloud-enabled, mobile-ready, offline-storage, HTML5 Markdown editor. Note: document storage is in the browser session, not server-side — only plugin configuration is persisted.",
+  "paths": [
+    {
+      "name": "Config",
+      "host": "/mnt/cache/appdata/dillinger",
+      "container": "/config",
+      "mode": "rw",
+      "description": "Dillinger plugin configuration files.",
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI",
+      "host": "8080",
+      "container": "8080",
+      "protocol": "tcp",
+      "description": "Web interface port.",
+      "required": true,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "PUID",
+      "key": "PUID",
+      "value": "1000",
+      "description": "User ID for file permissions.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "PGID",
+      "key": "PGID",
+      "value": "1000",
+      "description": "Group ID for file permissions.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "TZ",
+      "key": "TZ",
+      "value": "Etc/UTC",
+      "description": "Timezone.",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
