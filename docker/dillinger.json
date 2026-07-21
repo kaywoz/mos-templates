@@ -1,7 +1,7 @@
 {
   "name": "Dillinger",
-  "repo": "lscr.io/linuxserver/dillinger:latest",
-  "registry": "https://hub.docker.com/r/linuxserver/dillinger",
+  "repo": "ljoemccann/dillinger:latest",
+  "registry": "https://hub.docker.com/r/joemccann/dillinger",
   "network": "bridge",
   "custom_ip": null,
   "default_shell": "bash",
@@ -13,7 +13,7 @@
   "icon": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dillinger.png",
   "category": [ "Productivity" ],
   "project": "https://github.com/joemccann/dillinger",
-  "support": "https://github.com/linuxserver/docker-dillinger/issues",
+  "support": "https://github.com/joemccann/dillinger/issues",
   "donate": null,
   "description": "A cloud-enabled, mobile-ready, offline-storage, HTML5 Markdown editor. Note: document storage is in the browser session, not server-side — only plugin configuration is persisted.",
   "paths": [
