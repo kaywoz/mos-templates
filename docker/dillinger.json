@@ -10,7 +10,7 @@
   "post_parameters": null,
   "cpu_set": null,
   "web_ui_url": "http://[IP]:[PORT:8080]",
-  "icon": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dillinger.png",
+  "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/dillinger.svg",
   "category": [ "Productivity" ],
   "project": "https://github.com/joemccann/dillinger",
   "support": "https://github.com/joemccann/dillinger/issues",
