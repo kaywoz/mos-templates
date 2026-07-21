@@ -1,6 +1,6 @@
 {
   "name": "Dillinger",
-  "repo": "joemccann/dillinger:latest",
+  "repo": "joemccann/dillinger:3.45.0",
   "registry": "https://hub.docker.com/r/joemccann/dillinger",
   "network": "bridge",
   "custom_ip": null,
