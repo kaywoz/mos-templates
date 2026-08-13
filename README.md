@@ -6,6 +6,8 @@
 ![Last Commit](https://img.shields.io/github/last-commit/kaywoz/mos-templates?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/kaywoz/mos-templates?style=flat-square)
 ![Repo size](https://img.shields.io/github/repo-size/kaywoz/mos-templates?style=flat-square)
+![Claude PRs open](https://img.shields.io/github/issues-search/kaywoz/mos-templates?query=is%3Apr+is%3Aopen+label%3Aclaude&label=Claude%20PRs%20open&style=flat-square)
+![Claude PRs merged](https://img.shields.io/github/issues-search/kaywoz/mos-templates?query=is%3Apr+is%3Amerged+label%3Aclaude&label=Claude%20PRs%20merged&style=flat-square)
 
 Templates for the **MOS Hub** – a collection of templates that are **directly discoverable inside the MOS Hub**.
 ---
