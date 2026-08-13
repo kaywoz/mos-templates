@@ -31,7 +31,8 @@
       "mode": "rw",
       "host": "/mnt/cache/appdata/dozzle/data",
       "container": "/data",
-      "description": ""
+      "description": "",
+      "required": false
     }
   ],
   "ports": [

@@ -12,9 +12,9 @@
   "category": [
     "Productivity"
   ],
-  "project": "https://github.com/microsoft/vscode",
-  "support": "https://github.com/microsoft/vscode/issues",
-  "donate": "https://code.visualstudio.com/",
+  "project": "https://github.com/coder/code-server",
+  "support": "https://github.com/coder/code-server/issues",
+  "donate": null,
   "description": "Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.",
   "readme_url": "https://github.com/coder/code-server/blob/main/docs/README.md",
   "paths": [
