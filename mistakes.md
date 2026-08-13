@@ -2,7 +2,7 @@
 
 A running log of mistakes made while building/PR'ing templates for this repo —
 schema errors, failed PRs, misread requirements, bad assumptions about an
-upstream project, anything Kristian had to correct. Read this file in full
+upstream project, anything kaywoz had to correct. Read this file in full
 before starting new work. Add a new entry any time a PR fails, gets rejected,
 or turns out to have been based on a misunderstanding.
 
@@ -51,9 +51,9 @@ mistakes, not a diary.
 - **Root cause:** didn't cross-check the task against §6's token-scope rule
   before starting; the conflict only surfaced at push time instead of being
   flagged up front.
-- **Fix applied:** flagged the conflict to Kristian in the PR description
-  instead of silently working around it; he chose to widen the token scope
-  himself to unblock the push.
+- **Fix applied:** flagged the conflict to kaywoz in the PR description
+  instead of silently working around it; they chose to widen the token scope
+  themselves to unblock the push.
 - **Rule going forward:** before starting any task that adds or edits a
   `.github/workflows/*` file, check the automation token's actual scope
   first and flag a §6 conflict *before* attempting the push, not after.

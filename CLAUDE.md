@@ -166,6 +166,6 @@ examples to follow.
 ## 7. When something goes wrong
 
 If a PR is rejected, CI fails, a template turns out wrong after merge, or you
-misunderstood something Kristian asked for — **log it in `mistakes.md`**
+misunderstood something kaywoz asked for — **log it in `mistakes.md`**
 using the format defined at the top of that file, before doing anything else.
 This is not optional cleanup, it's part of finishing the task.
