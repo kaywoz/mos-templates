@@ -16,7 +16,7 @@
   "support": "https://github.com/gtsteffaniak/filebrowser/issues",
   "donate": null,
   "description": "The best free self-hosted web-based file manager.",
-  "readme_url": "https://github.com/linuxserver/docker-kavita/blob/main/README.md",
+  "readme_url": "https://github.com/gtsteffaniak/filebrowser/blob/main/README.md",
   "paths": [
     {
       "name": "Config",

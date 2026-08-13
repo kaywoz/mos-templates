@@ -38,3 +38,22 @@ mistakes, not a diary.
   copied. Not yet fixed upstream — candidate for a small cleanup PR.
 - **Rule going forward:** validate `category` is always a non-empty array of
   strings before opening any PR that touches a `docker/*.json` file.
+
+### 2026-08-13 — chore/claude-pr-badges
+
+- **Trigger:** misunderstood request — pushed into a policy conflict mid-task
+- **What happened:** built a GitHub Actions workflow
+  (`.github/workflows/label-claude-prs.yml`) to auto-label Claude-authored
+  PRs. The push was rejected: the repo's scoped PAT lacks the `workflow`
+  scope needed to create/modify files under `.github/workflows/`, which is
+  exactly what CLAUDE.md §6 says the token should never have ("no Actions").
+  The task only landed because the token's scope was widened to push it.
+- **Root cause:** didn't cross-check the task against §6's token-scope rule
+  before starting; the conflict only surfaced at push time instead of being
+  flagged up front.
+- **Fix applied:** flagged the conflict to Kristian in the PR description
+  instead of silently working around it; he chose to widen the token scope
+  himself to unblock the push.
+- **Rule going forward:** before starting any task that adds or edits a
+  `.github/workflows/*` file, check the automation token's actual scope
+  first and flag a §6 conflict *before* attempting the push, not after.
