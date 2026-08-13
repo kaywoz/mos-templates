@@ -1,0 +1,102 @@
+{
+  "name": "Rackpad",
+  "repo": "ghcr.io/kobii-git/rackpad:1.6.7",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "web_ui_url": "http://[IP]:[PORT:3000]",
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/rackpad.svg",
+  "category": [
+    "Utilities"
+  ],
+  "project": "https://github.com/Kobii-git/rackpad",
+  "support": "https://github.com/Kobii-git/rackpad/issues",
+  "donate": null,
+  "description": "Rackpad is a self-hosted inventory and operations tool for homelabs and small datacenters, tracking racks, devices, ports, cables, IPAM, VLANs, and Wi-Fi. It also provides network discovery, monitoring, reporting, and rack/cable topology visualization.",
+  "readme_url": "https://github.com/Kobii-git/rackpad/blob/main/README.md",
+  "paths": [
+    {
+      "name": "Data",
+      "host": "/mnt/cache/appdata/rackpad",
+      "container": "/data",
+      "mode": "rw",
+      "description": "SQLite database and application data.",
+      "required": true
+    }
+  ],
+  "ports": [
+    {
+      "name": "WebUI Port",
+      "host": "3000",
+      "container": "3000",
+      "protocol": "tcp",
+      "description": "Web interface",
+      "required": true,
+      "mask": false
+    },
+    {
+      "name": "SNMP Trap Port",
+      "host": "1162",
+      "container": "1162",
+      "protocol": "udp",
+      "description": "SNMP trap receiver, enabled by default upstream. Only needed if you use SNMP trap monitoring.",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "Trust Proxy",
+      "key": "TRUST_PROXY",
+      "value": "0",
+      "description": "Set to 1 when Rackpad sits behind a reverse proxy (Nginx, Caddy, Traefik, etc).",
+      "required": true,
+      "mask": false
+    },
+    {
+      "name": "Trusted Hosts",
+      "key": "TRUSTED_HOSTS",
+      "value": "",
+      "description": "Comma-separated hostnames Rackpad should accept in production, e.g. rackpad.example.com.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Trusted Origins",
+      "key": "TRUSTED_ORIGINS",
+      "value": "",
+      "description": "Comma-separated browser origins Rackpad should trust in production, e.g. https://rackpad.example.com.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "App URL",
+      "key": "APP_URL",
+      "value": "",
+      "description": "Public origin Rackpad is reached at. Required when using OIDC login or a reverse proxy.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Monitor Interval",
+      "key": "MONITOR_INTERVAL_MS",
+      "value": "300000",
+      "description": "Background health-check loop interval in milliseconds.",
+      "required": true,
+      "mask": false
+    },
+    {
+      "name": "Secret Key",
+      "key": "RACKPAD_SECRET_KEY",
+      "value": "",
+      "description": "Long random value (e.g. openssl rand -hex 32) required before storing shared SNMP credential secrets. ICMP/TCP/HTTP monitoring works without it.",
+      "required": false,
+      "mask": true
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
