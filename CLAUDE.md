@@ -134,6 +134,17 @@ examples to follow.
 
 ## 5. Security practices (non-negotiable)
 
+- **Never enter PII into this repo** — real names, personal emails, phone
+  numbers, physical addresses, or any other personally identifying detail,
+  whether it's about the maintainer, a contributor, or anyone else. This
+  includes commit messages, PR titles/descriptions, code comments,
+  filenames, and file contents. The maintainer is referred to as `kaywoz`
+  everywhere in this repo, never by a real name.
+  If you're about to commit, push, or open a PR and notice it contains PII
+  (yours, the user's, or a third party's) — **stop before pushing/opening
+  the PR**, remove or redact the PII, and only proceed once it's clean. If
+  you're unsure whether something counts as PII, treat it as PII and ask
+  before proceeding.
 - **Never embed a real credential, token, or password** in any template,
   `.env`, or compose file — placeholders only, clearly marked as such.
 - **Check image provenance** before templating an unfamiliar image: is it an
@@ -166,6 +177,6 @@ examples to follow.
 ## 7. When something goes wrong
 
 If a PR is rejected, CI fails, a template turns out wrong after merge, or you
-misunderstood something Kristian asked for — **log it in `mistakes.md`**
+misunderstood something kaywoz asked for — **log it in `mistakes.md`**
 using the format defined at the top of that file, before doing anything else.
 This is not optional cleanup, it's part of finishing the task.
