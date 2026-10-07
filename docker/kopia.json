@@ -53,7 +53,7 @@
         {
       "name": "Config",
       "host": "/mnt/cache/appdata/kopia/tmp/dir",
-      "container": "/tmp:shared",
+      "container": "/tmp/shared",
       "mode": "rw",
       "description": "Kopia tmp directory.",
       "required": true
