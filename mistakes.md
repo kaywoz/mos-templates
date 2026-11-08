@@ -57,3 +57,17 @@ mistakes, not a diary.
 - **Rule going forward:** before starting any task that adds or edits a
   `.github/workflows/*` file, check the automation token's actual scope
   first and flag a §6 conflict *before* attempting the push, not after.
+
+### 2026-11-08 — docker-socket-proxy, beszel-agent
+
+- **Trigger:** misunderstood request
+- **What happened:** the new Docker Socket Proxy template (PR 6, merged) and
+  the Beszel agent fix (PR 7) put deployment hardening and addresses into
+  the templates: `--read-only`, `--tmpfs`, `--user`, `--cap-drop`, memory and
+  pid limits and `-p 127.0.0.1:2375:2375` in `extra_parameters`, and
+  tailnet `HUB_URL`/`LISTEN` values.
+- **Root cause:** treated a template as one host's deployment config; kaywoz
+  adds those settings when deploying.
+- **Fix applied:** both templates reset to upstream defaults plus documented
+  requirements; safety notes moved into descriptions.
+- **Rule going forward:** CLAUDE.md §2, "Templates stay generic".
