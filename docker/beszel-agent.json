@@ -5,7 +5,7 @@
   "custom_ip": null,
   "default_shell": "sh",
   "privileged": false,
-  "extra_parameters": "--restart=unless-stopped --user 65534:65534 --read-only --cap-drop ALL --security-opt no-new-privileges:true --memory 128m --pids-limit 50",
+  "extra_parameters": "--restart=unless-stopped",
   "post_parameters": null,
   "web_ui_url": null,
   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/beszel.png",
@@ -15,7 +15,7 @@
   "project": "https://github.com/henrygd/beszel",
   "support": "https://github.com/henrygd/beszel/issues",
   "donate": "https://www.buymeacoffee.com/henrygd",
-  "description": "Beszel Agent runs on each server you want to monitor. It collects system metrics (CPU, memory, disk, network) and Docker container stats, then reports them back to the Beszel Hub. Uses host networking (needed for host network stats) and reads Docker through the Docker Socket Proxy template.",
+  "description": "Beszel Agent runs on each server you want to monitor. It collects system metrics (CPU, memory, disk, network) and Docker container stats, then reports them back to the Beszel Hub. Uses host networking, which upstream requires for host network stats.",
   "readme_url": "https://github.com/henrygd/beszel/blob/main/readme.md",
   "paths": [
     {
@@ -23,8 +23,16 @@
       "host": "/mnt/cache/appdata/beszel/agent/",
       "container": "/var/lib/beszel-agent",
       "mode": "rw",
-      "description": "Persistent storage for the Beszel Agent (agent state). Runs as uid 65534: the host folder must be owned by 65534:65534.",
+      "description": "Persistent storage for the Beszel Agent. Stores agent state and configuration data.",
       "required": true
+    },
+    {
+      "name": "Docker Socket",
+      "host": "/var/run/docker.sock",
+      "container": "/var/run/docker.sock",
+      "mode": "ro",
+      "description": "Read-only access to the Docker socket for container stats. ':ro' restricts nothing on a socket: to limit the API, leave this out and set DOCKER_HOST to a socket proxy instead.",
+      "required": false
     }
   ],
   "ports": [],
@@ -32,16 +40,16 @@
     {
       "name": "Hub URL",
       "key": "HUB_URL",
-      "value": "https://beszel.<tailnet>.ts.net",
-      "description": "The Beszel Hub URL the agent pushes to (WebSocket). Over Tailscale: the hub's Tailscale Service, e.g. https://beszel.<tailnet>.ts.net.",
+      "value": "http://[BESZEL-HUB-IP]:8090",
+      "description": "The URL of your Beszel Hub. Use the local IP of the server where the Hub is running (e.g. http://192.168.1.100:8090).",
       "required": false,
       "mask": false
     },
     {
       "name": "Listen Port",
       "key": "LISTEN",
-      "value": "<tailnet-ip>:45876",
-      "description": "Address the agent listens on for the hub's SSH pull (fallback to push). With host networking, bind it to this host's tailnet IP so it isn't reachable on the LAN. Port must match the one entered in the Hub.",
+      "value": "45876",
+      "description": "The port (or address:port) the agent listens on. Must match the port entered when adding the system in the Beszel Hub UI. Default is 45876. With host networking a bare port listens on every interface; set address:port to limit it.",
       "required": false,
       "mask": false
     },
@@ -64,9 +72,9 @@
     {
       "name": "Docker Host",
       "key": "DOCKER_HOST",
-      "value": "tcp://127.0.0.1:2375",
-      "description": "Read Docker through the read-only Docker Socket Proxy template (POST=0) instead of mounting docker.sock.",
-      "required": true,
+      "value": "",
+      "description": "Optional: a read-only Docker socket proxy (e.g. the Docker Socket Proxy template at tcp://127.0.0.1:2375) instead of mounting the Docker socket.",
+      "required": false,
       "mask": false
     }
   ],
