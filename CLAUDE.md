@@ -84,6 +84,16 @@ don't silently introduce it in one template.
 }
 ```
 
+**Templates stay generic.** A template carries the upstream image's defaults
+plus what upstream documents as required to work (e.g. `network: host` when
+the docs say so). Deployment-specific settings are added when the container
+is deployed, not baked into the template: hardening flags (`--read-only`,
+`--cap-drop`, `--user`, `--security-opt`, `--memory`, `--pids-limit`,
+`--tmpfs`), host-IP port bindings, tailnet/LAN addresses and hostnames.
+`extra_parameters` stays `--restart=unless-stopped` unless upstream requires
+more. Where a setting matters for safety (e.g. bind a port to localhost
+only), say so in the field's `description` instead.
+
 **Existing category vocabulary (reuse, don't fork new spellings):**
 `Utilities`, `Security`, `Network`, `Media`, `Monitoring`, `Storage`,
 `Backup`, `Archiving`, `Productivity`, `Home Automation`.
