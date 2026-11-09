@@ -1,0 +1,77 @@
+{
+  "name": "Hawser",
+  "repo": "ghcr.io/finsys/hawser:latest",
+  "network": "bridge",
+  "custom_ip": null,
+  "default_shell": "sh",
+  "privileged": false,
+  "extra_parameters": "--restart=unless-stopped",
+  "post_parameters": null,
+  "web_ui_url": null,
+  "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/dockhand.png",
+  "category": [
+    "Utilities"
+  ],
+  "project": "https://github.com/Finsys/hawser",
+  "support": "https://github.com/Finsys/hawser/issues",
+  "donate": null,
+  "description": "Hawser is the remote Docker agent for Dockhand. In Standard mode it listens on port 2376 and lets a Dockhand server manage this host's Docker; in Edge mode (DOCKHAND_SERVER_URL set) it connects out to Dockhand instead. It needs the full Docker socket, so whoever holds the token controls this host's Docker.",
+  "readme_url": "https://github.com/Finsys/hawser/blob/main/README.md",
+  "paths": [
+    {
+      "name": "Docker Socket",
+      "host": "/var/run/docker.sock",
+      "container": "/var/run/docker.sock",
+      "mode": "rw",
+      "description": "Docker socket. Hawser only talks to a Unix socket; a read-only socket proxy does not work with it.",
+      "required": true
+    },
+    {
+      "name": "Stacks",
+      "host": "/mnt/cache/appdata/hawser/stacks",
+      "container": "/data/stacks",
+      "mode": "rw",
+      "description": "Compose stack files deployed from Dockhand. If stacks use relative bind mounts, the container path must equal the host path and STACKS_DIR must be set to it.",
+      "required": false
+    }
+  ],
+  "ports": [
+    {
+      "name": "Agent Port",
+      "host": "2376",
+      "container": "2376",
+      "protocol": "tcp",
+      "description": "Standard mode API (HTTP, or HTTPS with TLS_CERT/TLS_KEY). Not needed in Edge mode.",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "variables": [
+    {
+      "name": "Token",
+      "key": "TOKEN",
+      "value": "",
+      "description": "Shared token Dockhand sends in the X-Hawser-Token header. Required unless the agent binds a loopback address only; Hawser refuses to start without it otherwise.",
+      "required": true,
+      "mask": true
+    },
+    {
+      "name": "Agent Name",
+      "key": "AGENT_NAME",
+      "value": "",
+      "description": "Optional: name shown in Dockhand. Defaults to the container hostname.",
+      "required": false,
+      "mask": false
+    },
+    {
+      "name": "Dockhand Server URL",
+      "key": "DOCKHAND_SERVER_URL",
+      "value": "",
+      "description": "Optional: wss://<dockhand>/api/hawser/connect switches to Edge mode. Leave empty for Standard mode.",
+      "required": false,
+      "mask": false
+    }
+  ],
+  "devices": [],
+  "labels": []
+}
