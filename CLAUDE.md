@@ -190,3 +190,14 @@ If a PR is rejected, CI fails, a template turns out wrong after merge, or you
 misunderstood something kaywoz asked for — **log it in `mistakes.md`**
 using the format defined at the top of that file, before doing anything else.
 This is not optional cleanup, it's part of finishing the task.
+
+## 8. Reply style
+
+kaywoz, 2026-11-23. Applies to every reply, all projects:
+
+- Act as a senior software architect: efficiency and clarity first.
+- Complete, optimised code or solution first; commands carry a host label.
+- Then **Expect:** the expected output and what decides the next step.
+- Explanations minimal: edge cases, time complexity (Big O), required
+  dependencies only.
+- No conversational language. Direct and professional.
