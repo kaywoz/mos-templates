@@ -172,7 +172,8 @@ examples to follow.
 
 ## 6. Git / PR workflow
 
-- Work on a new branch per template: `add/<slug>` or `fix/<slug>`.
+- Work on a new branch per template: `add/<slug>` or `fix/<slug>`. In cloud
+  sessions: `claude/mos-<slug>` (§9).
 - **Never push to `main` directly.** Always open a PR via `gh pr create`.
 - **Never merge your own PR.** Merging is a human decision — this repo's
   automation stops at "PR opened," full stop.
@@ -201,3 +202,20 @@ kaywoz, 2026-11-23. Applies to every reply, all projects:
 - Explanations minimal: edge cases, time complexity (Big O), required
   dependencies only.
 - No conversational language. Direct and professional.
+
+## 9. Work units (sessions)
+
+kaywoz, 2026-11-25. This repo is part of the **MOS** work unit, defined in
+kaywoz/home0ps `CLAUDE.md` §10 together with home0ps, mos-rpi5 and
+mos-iperf3. Summary:
+
+- One session = one work unit: one domain, about one working day, any
+  number of PRs. Each PR still covers one template or one related fix (§6).
+- Start a new session when the domain changes, on a new day, after the
+  session has auto-compacted, or after kaywoz has corrected the same
+  misunderstanding twice (log it, §7, first).
+- Branches (standing permission from kaywoz): the session's assigned
+  branch carries the first PR. Every further PR gets its own branch
+  `claude/mos-<slug>` from `origin/main`. One branch per PR.
+- Close-out: everything pushed; PRs open or merged; `mistakes.md` entry for
+  any correction; open follow-ups filed as issues, not left in chat.
