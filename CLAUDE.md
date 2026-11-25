@@ -202,6 +202,9 @@ kaywoz, 2026-11-23. Applies to every reply, all projects:
 - Explanations minimal: edge cases, time complexity (Big O), required
   dependencies only.
 - No conversational language. Direct and professional.
+- Every PR, issue or commit mentioned in a reply is a full clickable
+  link (`https://github.com/kaywoz/<repo>/pull/N`), not a bare `#N`, so
+  kaywoz can open it on mobile.
 
 ## 9. Work units (sessions)
 
