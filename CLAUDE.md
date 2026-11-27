@@ -217,6 +217,9 @@ Added kaywoz, 2026-11-27:
   not what the diff says.
 - Each step: host label on the line above the block, never a `#` line
   inside it; then the command or exact click path; then **Expect:**.
+- A step that changes a host or service is a copy-paste one-liner, never
+  "put X in file Y": secrets read with `read -s`, hostnames and paths
+  found at run time. A click path only where no CLI or API exists.
 - Negative findings ("nothing else needed changing") get one line, not a
   list.
 - Bold marks section labels only, not the start of every bullet.
